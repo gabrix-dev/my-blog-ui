@@ -13,7 +13,7 @@ const Value = ({ className = "", title, description }) => {
 
 const ValuesSection = () => {
   return (
-    <div className="mt-96 ">
+    <div className="mt-96" id="values_section">
       <SectionTitle title="Values" />
       <div className="text-3xl text-gray-600 font-medium">
         Here are some of the values I live by.

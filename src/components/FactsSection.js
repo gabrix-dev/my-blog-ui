@@ -56,7 +56,7 @@ const factsAboutMe = [
 
 const FactCard = ({ title, description, icon: IconComponent }) => {
   return (
-    <div className="col-span-6 bg-gray-100 rounded-lg p-12 mb-6">
+    <div className="col-span-6 bg-gray-200 rounded-lg p-12 mb-6">
       <IconComponent className="mb-8 w-14" />
       <div className="text-lg font-semibold">{title}</div>
       <p className="mt-3 text-lg font-medium text-gray-600 w-4/5">
@@ -68,7 +68,7 @@ const FactCard = ({ title, description, icon: IconComponent }) => {
 
 const FactsSection = () => {
   return (
-    <div className="mt-64 grid grid-cols-12 gap-x-6">
+    <div className="mt-64 grid grid-cols-12 gap-x-6" id="facts_section">
       <SectionTitle className="col-span-12" title="Random Facts" />
       <h1 className="col-span-12 text-2xl font-medium">
         Here are some random facts about me.

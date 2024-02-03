@@ -26,26 +26,25 @@ export default function Home() {
                 style={{ width: "100%", height: "auto" }}
               />
             </div>
-            <div className="w-1/2 flex flex-col items-center self-center">
+            <div className="w-3/5 flex flex-col items-center self-center">
               <AnimatedText
-                text="Turning Vision Into Reality With Code And Design."
+                text="Welcome to my Blog!"
                 className="text-6xl !text-left "
               />
-              <p className="my-4 text-base font-medium ">
-                As a skilled full-stack developer, I am dedicated to turning
-                ideas into innovative web applications. Explore my latest
-                projects and articles, showcasing my expertise in React.js and
-                web development.
+              <p className="my-4 lg:pr-24 text-lg font-medium ">
+                Here, as a technology enthusiast with an insatiable thirst for
+                knowledge, I share insights, discoveries, and reflections that
+                capture the essence of my ongoing journey of learning.
               </p>
               {/* lg:self-center */}
               <div className="flex items-center self-start mt-2 ">
                 <Link
                   href="/dummy.pdf"
                   target={"_blank"}
-                  className="border-solid border-2 border-transparent hover:border-dark flex items-center bg-dark text-light p-2.5 px-6 rounded-lg text-lg font-semibold hover:bg-light hover:text-dark dark:bg-light dark:text-dark hover:dark:bg-dark hover:dark:border-light hover:dark:text-light"
+                  className="border-solid border-2 border-transparent hover:border-secondary flex items-center bg-secondary p-2.5 px-6 rounded-lg text-lg font-semibold hover:bg-light hover:text-secondary  text-light"
                   download={true}
                 >
-                  Resume <LinkArrow className={"w-6 ml-1"} />
+                  Articles <LinkArrow className={"w-6 ml-1"} />
                 </Link>
                 <Link
                   href="mailto:gabriel.fortia.pro@gmail.com"

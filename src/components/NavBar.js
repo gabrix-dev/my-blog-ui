@@ -23,7 +23,7 @@ const CustomLink = ({ href, title, className = "" }) => {
 
 const NavBar = () => {
   return (
-    <header className="w-full px-60 py-16 flex items-center justify-between relative z-10">
+    <header className="w-full px-60 py-16 flex items-center justify-between relative z-10 bg-light">
       <div className="w-full flex justify-between items-center">
         <h1 className="font-semibold text-2xl text-orange-400  ">
           Gabriel Fortià

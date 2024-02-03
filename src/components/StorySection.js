@@ -4,7 +4,7 @@ import SectionTitle from "./SectionTitle";
 
 const StorySection = () => {
   return (
-    <div className="mt-96 px-20">
+    <div className="mt-96 px-20" id="story_section">
       <SectionTitle title="My Story" />
       <div className="text-3xl text-gray-600 font-medium">
         I was born in 2001 in Girona, Spain.
