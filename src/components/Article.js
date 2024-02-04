@@ -10,7 +10,7 @@ const Article = ({ className = "" }) => {
         transition: { duration: 0.4 },
       }}
       whileTap={{ scale: 0.9 }}
-      className={`${className} rounded-lg`}
+      className={`${className} rounded-lg `}
     >
       <Image
         className="aspect-[3/4] rounded-lg  hover:border border-amber-600 p-1"

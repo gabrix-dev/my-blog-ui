@@ -14,7 +14,7 @@ const Featured = ({ className = "" }) => {
       className={`${className} hover:border border-amber-600 p-1 rounded-lg`}
     >
       <div
-        className={` w-full bg-gray-100 rounded-lg py-20 px-16 grid grid-cols-2 gap-4 hover:cursor-pointer`}
+        className={` w-full bg-gray-200 rounded-lg py-20 px-16 grid grid-cols-2 gap-4 hover:cursor-pointer`}
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
       >
