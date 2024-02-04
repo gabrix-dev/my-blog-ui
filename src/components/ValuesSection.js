@@ -5,8 +5,10 @@ import Image from "next/image";
 const Value = ({ className = "", title, description }) => {
   return (
     <div className={`${className}`}>
-      <h1 className="text-xl font-semibold">{title}</h1>
-      <p className="mt-3 text-justify text-lg">{description}</p>
+      <h1 className="text-xl font-semibold lg:text-left text-center lg:pr-0 pr-6">
+        {title}
+      </h1>
+      <p className="mt-3 text-justify lg:text-lg text-sm">{description}</p>
     </div>
   );
 };
@@ -15,11 +17,11 @@ const ValuesSection = () => {
   return (
     <div className="mt-96" id="values_section">
       <SectionTitle title="Values" />
-      <div className="text-3xl text-gray-600 font-medium">
+      <div className="lg:text-3xl text-md lg:text-left text-center text-gray-600 font-medium">
         Here are some of the values I live by.
       </div>
-      <div className="flex mt-10 gap-14">
-        <div className="w-1/2">
+      <div className="flex lg:flex-row flex-col lg:mt-10 mt-3 gap-14">
+        <div className="lg:w-1/2">
           <Value
             className="mt-5"
             title="Optimism"
@@ -36,7 +38,7 @@ const ValuesSection = () => {
             description="My insatiable curiosity fuels a relentless pursuit of knowledge in every aspect of my life. Whether it's through the projects I work in, the conversations I engage in, the books I read, or the podcasts I eagerly listen to, I am constantly seeking to expand my horizons."
           />
         </div>
-        <div className="w-1/2 ">
+        <div className="lg:w-1/2 ">
           <Image
             src="/images/gf_about_me.png"
             alt="G-F brand robot welcoming blog readers"

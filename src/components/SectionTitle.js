@@ -2,8 +2,8 @@ import React from "react";
 
 const SectionTitle = ({ title, className = "" }) => {
   return (
-    <div className={`flex items-center ${className}`}>
-      <div className="mb-10 text-5xl font-bold">
+    <div className={`flex items-center  ${className}`}>
+      <div className="mb-10 lg:text-5xl lg:mx-0 mx-auto text-3xl font-bold">
         {title}
         <span className="text-orange-400 text-7xl"> .</span>
       </div>

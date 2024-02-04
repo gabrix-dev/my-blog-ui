@@ -56,10 +56,12 @@ const factsAboutMe = [
 
 const FactCard = ({ title, description, icon: IconComponent }) => {
   return (
-    <div className="col-span-6 bg-gray-200 rounded-lg p-12 mb-6">
-      <IconComponent className="mb-8 w-14" />
-      <div className="text-lg font-semibold">{title}</div>
-      <p className="mt-3 text-lg font-medium text-gray-600 w-4/5">
+    <div className="lg:col-span-6 col-span-1 col-start-1 bg-gray-200 rounded-lg lg:p-12 p-8 mb-6">
+      <IconComponent className="mb-8 lg:w-14 w-10 mx-auto lg:mx-0" />
+      <div className="text-lg font-semibold lg:text-left text-center">
+        {title}
+      </div>
+      <p className="mt-3 lg:text-lg text-md font-medium lg:text-left text-center text-gray-600 lg:w-4/5">
         {description}
       </p>
     </div>
@@ -68,12 +70,18 @@ const FactCard = ({ title, description, icon: IconComponent }) => {
 
 const FactsSection = () => {
   return (
-    <div className="mt-64 grid grid-cols-12 gap-x-6" id="facts_section">
-      <SectionTitle className="col-span-12" title="Random Facts" />
-      <h1 className="col-span-12 text-2xl font-medium">
+    <div
+      className="mt-64 grid lg:grid-cols-12 lg:gap-x-6 grid-cols-1"
+      id="facts_section"
+    >
+      <SectionTitle
+        className="lg:col-span-12 col-span-1"
+        title="Random Facts"
+      />
+      <h1 className="lg:col-span-12 col-span-1 col-start-1 lg:text-left text-center lg:text-2xl text-lg font-medium">
         Here are some random facts about me.
       </h1>
-      <h1 className="col-start-1 col-span-6 text-2xl font-medium text-gray-600 mt-2 mb-8">
+      <h1 className="col-start-1 lg:col-span-6 lg:text-2xl lg:text-left text-center text-lg font-medium text-gray-600 mt-2 mb-8">
         Get to know me.
       </h1>
       <div className="col-span-6"></div>
