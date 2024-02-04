@@ -40,7 +40,7 @@ export default function About({ className }) {
         <section className={className}>
           <div>
             <div className="place-self-center">
-              <h1 className="lg:text-8xl lg:text-left text-center text-3xl font-extrabold">
+              <h1 className="lg:text-8xl lg:text-left text-center text-3xl font-bold">
                 <span className="text-black">
                   Hey, I'm Gabriel <span className="text-secondary">.</span>
                 </span>

@@ -24,7 +24,7 @@ const RobotImage = () => {
 export default function Home() {
   return (
     <>
-      <main className="flex text-dark w-full min-h-screen dark:text-light">
+      <main className="flex text-dark w-full min-h-screen">
         <Layout className="lg:!px-32 !p-0">
           <div className="lg:flex-row flex flex-col items-center justify-between w-full lg:mt-28">
             <div className="w-1/3 hidden lg:flex">

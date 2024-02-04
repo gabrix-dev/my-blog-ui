@@ -1,10 +1,12 @@
 import AnimatedText from "@/components/AnimatedText";
-import Article from "@/components/Article";
+import ArticleCard from "@/components/Article";
 import Featured from "@/components/Featured";
 import Layout from "@/components/Layout";
+import { useRouter } from "next/router";
 import React from "react";
 
 const ArticlesPage = () => {
+  const router = useRouter();
   return (
     <Layout className="!py-0">
       <h1 className="text-dark mb-4 lg:text-4xl text-xl lg:text-left text-center font-medium">
@@ -21,10 +23,18 @@ const ArticlesPage = () => {
       />
       <Featured className="mt-10" />
       <div className="grid grid-cols-12 gap-x-4 mt-10">
-        <Article className="lg:col-span-4 col-span-12 mb-10" />
-        <Article className="lg:col-span-4 col-span-12 mb-10" />
-        <Article className="lg:col-span-4 col-span-12 mb-10" />
-        <Article className="lg:col-span-4 col-span-12 mb-10" />
+        <ArticleCard
+          className="lg:col-span-4 col-span-12 mb-10"
+          onClick={() => router.push("/article/my-first-blog")}
+        />
+        <ArticleCard
+          className="lg:col-span-4 col-span-12 mb-10"
+          onClick={() => router.push("/article/my-first-blog")}
+        />{" "}
+        <ArticleCard
+          className="lg:col-span-4 col-span-12 mb-10"
+          onClick={() => router.push("/article/my-first-blog")}
+        />
       </div>
     </Layout>
   );

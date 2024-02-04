@@ -2,7 +2,7 @@ import Image from "next/image";
 import React from "react";
 import { motion } from "framer-motion";
 
-const Article = ({ className = "" }) => {
+const ArticleCard = ({ className = "", onClick }) => {
   return (
     <motion.div
       whileHover={{
@@ -11,6 +11,7 @@ const Article = ({ className = "" }) => {
       }}
       whileTap={{ scale: 0.9 }}
       className={`${className} rounded-lg `}
+      onClick={onClick}
     >
       <Image
         className="aspect-[3/4] rounded-lg  hover:border border-secondary p-1"
@@ -29,4 +30,4 @@ const Article = ({ className = "" }) => {
   );
 };
 
-export default Article;
+export default ArticleCard;
