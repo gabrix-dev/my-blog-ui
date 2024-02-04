@@ -23,11 +23,11 @@ const AboutSection = ({ title, anchor = "", icon: IconComponent }) => {
       className="rounded-lg hover:shadow-lg hover:border hover:border-secondary"
     >
       <Link
-        className="flex items-center rounded-xl p-3 text-gray-600 text-xl font-semibold justify-between lg:mx-0 mx-5"
+        className="flex items-center rounded-xl p-3 text-gray-600 text-xl font-semibold"
         href={anchor}
       >
+        <IconComponent className="h-8 w-8 text-secondary mr-4" />
         <h2>{title}</h2>
-        <IconComponent className="h-8 w-8 text-secondary ml-4" />
       </Link>
     </motion.div>
   );
@@ -74,23 +74,26 @@ export default function About({ className }) {
               </p>
             </div>
           </div>
-          <div className="pt-12 lg:items-center flex lg:flex-row flex-col lg:gap-14 w-full">
-            <AboutSection
-              title="Story"
-              anchor="#story_section"
-              icon={BookOpenIcon}
-            />
-            <AboutSection
-              title="Values"
-              icon={StarIcon}
-              anchor="#values_section"
-            />
-            <AboutSection
-              title="Facts"
-              icon={GiftIcon}
-              anchor="#facts_section"
-            />
+          <div className="pt-12">
+            <div className="items-center flex lg:flex-row flex-col lg:gap-14 gap-5 min-w-min">
+              <AboutSection
+                title="Story"
+                anchor="#story_section"
+                icon={BookOpenIcon}
+              />
+              <AboutSection
+                title="Values"
+                icon={StarIcon}
+                anchor="#values_section"
+              />
+              <AboutSection
+                title="Facts"
+                icon={GiftIcon}
+                anchor="#facts_section"
+              />
+            </div>
           </div>
+
           <StorySection />
           <ValuesSection />
           <FactsSection />

@@ -13,7 +13,7 @@ const Article = ({ className = "" }) => {
       className={`${className} rounded-lg `}
     >
       <Image
-        className="aspect-[3/4] rounded-lg  hover:border border-amber-600 p-1"
+        className="aspect-[3/4] rounded-lg  hover:border border-secondary p-1"
         src="/images/gf_about_me.png"
         alt="G-F brand robot welcoming blog readers"
         width={0}

@@ -47,16 +47,13 @@ export default function Home() {
               <div className="flex items-center lg:self-start lg:mt-2 mt-9 ">
                 <Link
                   href="/articles"
-                  target={"_blank"}
-                  className="border-solid border-2 border-transparent hover:border-secondary flex items-center bg-secondary p-2.5 px-6 rounded-lg text-lg font-semibold hover:bg-light hover:text-secondary  text-light"
-                  download={true}
+                  className="border-solid border-2 hover:shadow-lg border-transparent hover:border-secondary flex items-center bg-secondary p-2.5 px-6 rounded-lg text-lg font-semibold hover:bg-light hover:text-secondary  text-light"
                 >
                   Articles
                 </Link>
                 <Link
                   href="/about"
-                  target={"_blank"}
-                  className="ml-4 border-solid border-2 border-secondary text-secondary flex items-center p-2.5 px-6 rounded-lg text-lg font-semibold hover:bg-secondary hover:text-light"
+                  className="ml-4 border-solid border-2 hover:shadow-lg border-secondary text-secondary flex items-center p-2.5 px-6 rounded-lg text-lg font-semibold hover:bg-secondary hover:text-light"
                 >
                   About
                 </Link>

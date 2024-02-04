@@ -11,24 +11,28 @@ const Featured = ({ className = "" }) => {
         transition: { duration: 0.4 },
       }}
       whileTap={{ scale: 0.9 }}
-      className={`${className} hover:border border-amber-600 p-1 rounded-lg`}
+      className={`${className} hover:border border-secondary p-1 rounded-lg`}
     >
       <div
-        className={` w-full bg-gray-200 rounded-lg py-20 px-16 grid grid-cols-2 gap-4 hover:cursor-pointer`}
+        className={` w-full bg-gray-200 rounded-lg lg:py-20 py-10 lg:px-16 px-4 grid lg:grid-cols-2 grid-cols-1 gap-4 hover:cursor-pointer`}
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
       >
-        <div className="col-span-1 flex flex-col justify-between">
+        <div className="col-span-1 flex flex-col justify-between text-center lg:text-left">
           <div>
-            <h1 className="font-semibold">Featured article</h1>
-            <h1 className="text-4xl font-medium mt-5">Starting a Blog </h1>
-            <h1 className="text-lg font-semibold text-slate-400 mt-5">
+            <h1 className="font-medium lg:text-base text-xs">
+              Featured article
+            </h1>
+            <h1 className="lg:text-4xl text-2xl font-medium mt-5">
+              Starting a Blog{" "}
+            </h1>
+            <h1 className="lg:text-lg text-sm font-semibold text-slate-400 lg:mt-5 mt-3">
               January 26th, 2024 - 5 min read
             </h1>
           </div>
           <div className="">
             <div
-              className={`font-semibold text-lg underline decoration-orange-500  ${
+              className={`font-semibold lg:text-lg text-xs underline decoration-orange-500 lg:mt-0 mt-6  ${
                 isHovered ? "underline underline-offset-2" : "no-underline"
               }`}
             >
@@ -36,7 +40,7 @@ const Featured = ({ className = "" }) => {
             </div>
           </div>
         </div>
-        <div className="flex items-end">
+        <div className="flex items-end lg:mt-0 mt-5">
           <Image
             className="aspect-[4/3] lg:aspect-[4/5] rounded-xl mx-auto"
             src="/images/gf_about_me.png"
