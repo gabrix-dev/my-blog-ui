@@ -1,6 +1,7 @@
 import Image from "next/image";
 import React from "react";
 import { motion } from "framer-motion";
+import { bottomUp } from "@/animationVariants";
 
 const ArticleCard = ({ className = "", onClick }) => {
   return (
@@ -10,6 +11,10 @@ const ArticleCard = ({ className = "", onClick }) => {
         transition: { duration: 0.4 },
       }}
       whileTap={{ scale: 0.9 }}
+      initial="initial"
+      whileInView="animate"
+      variants={bottomUp}
+      viewport={{ once: true }}
       className={`${className} rounded-lg `}
       onClick={onClick}
     >

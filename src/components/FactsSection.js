@@ -14,6 +14,8 @@ import {
   HeartIcon,
 } from "@heroicons/react/24/outline";
 import SectionTitle from "./SectionTitle";
+import { motion } from "framer-motion";
+import { leftRight1, rightLeft1, rotationLeftRight } from "@/animationVariants";
 
 const factsAboutMe = [
   {
@@ -54,9 +56,17 @@ const factsAboutMe = [
   },
 ];
 
-const FactCard = ({ title, description, icon: IconComponent }) => {
+const FactCard = ({ title, description, icon: IconComponent, index }) => {
+  const variants = index % 2 === 0 ? rightLeft1 : leftRight1;
+
   return (
-    <div className="lg:col-span-6 col-span-1 col-start-1 bg-gray-200 rounded-lg lg:p-12 p-8 mb-6">
+    <motion.div
+      className="lg:col-span-6 col-span-1 col-start-1 bg-gray-200 rounded-lg lg:p-12 p-8 mb-6"
+      initial="initial"
+      variants={variants}
+      whileInView="animate"
+      viewport={{ once: true }}
+    >
       <IconComponent className="mb-8 lg:w-14 w-10 mx-auto lg:mx-0" />
       <div className="text-lg font-semibold lg:text-left text-center">
         {title}
@@ -64,7 +74,7 @@ const FactCard = ({ title, description, icon: IconComponent }) => {
       <p className="mt-3 lg:text-lg text-md font-medium lg:text-left text-center text-gray-600 lg:w-4/5">
         {description}
       </p>
-    </div>
+    </motion.div>
   );
 };
 
@@ -77,16 +87,29 @@ const FactsSection = () => {
       <SectionTitle
         className="lg:col-span-12 col-span-1"
         title="Random Facts"
+        variants={leftRight1}
       />
-      <h1 className="lg:col-span-12 col-span-1 col-start-1 lg:text-left text-center lg:text-2xl text-lg font-medium">
+      <motion.h1
+        className="lg:col-span-12 col-span-1 col-start-1 lg:text-left text-center lg:text-2xl text-lg font-medium"
+        initial="initial"
+        variants={rightLeft1}
+        whileInView="animate"
+        viewport={{ once: true }}
+      >
         Here are some random facts about me.
-      </h1>
-      <h1 className="col-start-1 lg:col-span-6 lg:text-2xl lg:text-left text-center text-lg font-medium text-gray-600 mt-2 mb-8">
+      </motion.h1>
+      <motion.h1
+        initial="initial"
+        variants={leftRight1}
+        whileInView="animate"
+        viewport={{ once: true }}
+        className="col-start-1 lg:col-span-6 lg:text-2xl lg:text-left text-center text-lg font-medium text-gray-600 mt-2 mb-8"
+      >
         Get to know me.
-      </h1>
+      </motion.h1>
       <div className="col-span-6"></div>
       {factsAboutMe.map((fact, index) => (
-        <FactCard key={index} {...fact} />
+        <FactCard key={index} {...fact} index={index} />
       ))}
     </div>
   );

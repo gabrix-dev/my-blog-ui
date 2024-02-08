@@ -4,14 +4,21 @@ import Featured from "@/components/Featured";
 import Layout from "@/components/Layout";
 import { useRouter } from "next/router";
 import React from "react";
+import { motion } from "framer-motion";
+import { bottomUp } from "@/animationVariants";
 
 const ArticlesPage = () => {
   const router = useRouter();
   return (
     <Layout className="!py-0">
-      <h1 className="text-dark mb-4 lg:text-4xl text-xl lg:text-left text-center font-medium">
+      <motion.h1
+        className="text-dark mb-4 lg:text-4xl text-xl lg:text-left text-center font-medium"
+        initial="initial"
+        animate="animate"
+        variants={bottomUp}
+      >
         Words can change the world
-      </h1>
+      </motion.h1>
       {/* <AnimatedText
         className="text-dark mb-4 lg:text-4xl text-xl lg:text-left text-center font-medium"
         text="Words Can Change The World"

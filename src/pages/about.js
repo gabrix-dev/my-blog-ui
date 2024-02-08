@@ -8,11 +8,23 @@ import FactsSection from "@/components/FactsSection";
 import ValuesSection from "@/components/ValuesSection";
 import { BookOpenIcon, StarIcon, GiftIcon } from "@heroicons/react/24/outline";
 import { motion } from "framer-motion";
+import {
+  zoomInOut,
+  rightLeft1,
+  rightLeft2,
+  rightLeft3,
+  leftRight1,
+} from "@/animationVariants";
 
 import React from "react";
 import Link from "next/link";
 
-const AboutSection = ({ title, anchor = "", icon: IconComponent }) => {
+const AboutSection = ({
+  title,
+  anchor = "",
+  icon: IconComponent,
+  variants,
+}) => {
   return (
     <motion.div
       whileHover={{
@@ -20,6 +32,9 @@ const AboutSection = ({ title, anchor = "", icon: IconComponent }) => {
         transition: { duration: 0.4 },
       }}
       whileTap={{ scale: 0.9 }}
+      initial="initial"
+      animate="animate"
+      variants={variants}
       className="rounded-lg hover:shadow-lg hover:border hover:border-secondary"
     >
       <Link
@@ -40,12 +55,22 @@ export default function About({ className }) {
         <section className={className}>
           <div>
             <div className="place-self-center">
-              <h1 className="lg:text-8xl lg:text-left text-center text-3xl font-bold">
+              <motion.h1
+                className="lg:text-8xl lg:text-left text-center text-3xl font-bold"
+                initial="initial"
+                animate="animate"
+                variants={leftRight1}
+              >
                 <span className="text-black">
                   Hey, I'm Gabriel <span className="text-secondary">.</span>
                 </span>
-              </h1>
-              <h2 className="lg:text-6xl lg:text-left text-xl font-extrabold flex lg:mt-4 mt-2">
+              </motion.h1>
+              <motion.h2
+                className="lg:text-6xl lg:text-left text-xl font-extrabold flex lg:mt-4 mt-2"
+                initial="initial"
+                animate="animate"
+                variants={leftRight1}
+              >
                 <br></br>
                 <TypeAnimation
                   className="mx-auto lg:mx-0"
@@ -66,12 +91,17 @@ export default function About({ className }) {
                   speed={50}
                   repeat={Infinity}
                 />
-              </h2>
-              <p className="text-gray-600 text-base text-center sm:text-lg lg:text-3xl lg:w-2/3 mt-10 leading-normal lg:text-left">
+              </motion.h2>
+              <motion.p
+                initial="initial"
+                animate="animate"
+                variants={rightLeft1}
+                className="text-gray-600 text-base text-center sm:text-lg lg:text-3xl lg:w-2/3 mt-10 leading-normal lg:text-left"
+              >
                 I am on a constant journey of discovery, exploring the intricate
                 complexities of our ever-changing world
                 {/*through a passion for building and insatiable curiosity. */}
-              </p>
+              </motion.p>
             </div>
           </div>
           <div className="pt-12">
@@ -80,15 +110,18 @@ export default function About({ className }) {
                 title="Story"
                 anchor="#story_section"
                 icon={BookOpenIcon}
+                variants={rightLeft1}
               />
               <AboutSection
                 title="Values"
                 icon={StarIcon}
                 anchor="#values_section"
+                variants={rightLeft2}
               />
               <AboutSection
                 title="Facts"
                 icon={GiftIcon}
+                variants={rightLeft3}
                 anchor="#facts_section"
               />
             </div>

@@ -4,20 +4,43 @@ import Image from "next/image";
 import AnimatedText from "@/components/AnimatedText";
 import Link from "next/link";
 import { LinkArrow } from "@/components/Icons";
+import { motion } from "framer-motion";
+import { buttonVariants, zoomInOut, bottomUp } from "../animationVariants.js";
 
 import React from "react";
 
 const RobotImage = () => {
   return (
-    <Image
-      src="/images/gf_robot_welcome.png"
-      alt="G-F brand robot welcoming blog readers"
-      className=""
-      width={0}
-      height={0}
-      sizes="100vw"
-      style={{ width: "100%", height: "auto" }}
-    />
+    <motion.div initial="initial" animate="animate" variants={zoomInOut}>
+      <Image
+        src="/images/gf_robot_welcome.png"
+        alt="G-F brand robot welcoming blog readers"
+        className=""
+        width={0}
+        height={0}
+        sizes="100vw"
+        style={{ width: "100%", height: "auto" }}
+      />
+    </motion.div>
+  );
+};
+
+const CustomLink = ({ title, route, className = "" }) => {
+  return (
+    <motion.div
+      initial="initial"
+      animate="animate"
+      whileHover="hover"
+      whileTap="tap"
+      variants={buttonVariants}
+    >
+      <Link
+        href={route}
+        className={`p-2.5 px-6 rounded-lg text-lg font-semibold hover:shadow-lg ${className}`}
+      >
+        {title}
+      </Link>
+    </motion.div>
   );
 };
 
@@ -35,28 +58,31 @@ export default function Home() {
                 text="Welcome to my Blog!"
                 className="lg:text-6xl text-xl lg:!text-left text-center"
               />
-              <p className="my-4 lg:pr-24 text-lg font-medium text-center lg:text-left">
+              <motion.p
+                className="my-4 lg:pr-24 text-lg font-medium text-center lg:text-left"
+                initial="initial"
+                animate="animate"
+                variants={bottomUp}
+              >
                 Here, as a technology enthusiast with an insatiable thirst for
                 knowledge, I share insights, discoveries, and reflections that
                 capture the essence of my ongoing journey of learning.
-              </p>
+              </motion.p>
               {/* lg:self-center */}
               <div className="w-52 lg:hidden">
                 <RobotImage />
               </div>
               <div className="flex items-center lg:self-start lg:mt-2 mt-9 ">
-                <Link
-                  href="/articles"
-                  className="border-solid border-2 hover:shadow-lg border-transparent hover:border-secondary flex items-center bg-secondary p-2.5 px-6 rounded-lg text-lg font-semibold hover:bg-light hover:text-secondary  text-light"
-                >
-                  Articles
-                </Link>
-                <Link
-                  href="/about"
-                  className="ml-4 border-solid border-2 hover:shadow-lg border-secondary text-secondary flex items-center p-2.5 px-6 rounded-lg text-lg font-semibold hover:bg-secondary hover:text-light"
-                >
-                  About
-                </Link>
+                <CustomLink
+                  route="/articles"
+                  className="border-solid border-2 border-transparent bg-secondary text-light"
+                  title="Articles"
+                />
+                <CustomLink
+                  route="/about"
+                  className="ml-4 border-solid border-2 border-secondary text-secondary"
+                  title="About"
+                />
               </div>
             </div>
           </div>

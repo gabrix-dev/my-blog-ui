@@ -90,7 +90,7 @@ const NavBar = () => {
           <CustomLink href="/" title="Home" />
           <CustomLink href="/about" title="About" />
           <CustomLink href="/articles" title="Articles" />
-          <CustomLink href="/subscribe" title="Subscribe" />
+          <CustomLink href="/contact" title="Subscribe" />
         </nav>
         <div className="flex gap-6">
           <LinkedInIcon />

@@ -1,6 +1,7 @@
 import Image from "next/image";
 import React, { useState } from "react";
 import { motion } from "framer-motion";
+import { bottomUp, zoomInOut } from "@/animationVariants";
 
 const Featured = ({ className = "" }) => {
   const [isHovered, setIsHovered] = useState(false);
@@ -11,6 +12,9 @@ const Featured = ({ className = "" }) => {
         transition: { duration: 0.4 },
       }}
       whileTap={{ scale: 0.9 }}
+      initial="initial"
+      animate="animate"
+      variants={bottomUp}
       className={`${className} hover:border border-secondary p-1 rounded-lg`}
     >
       <div
