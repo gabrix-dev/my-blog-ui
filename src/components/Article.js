@@ -1,9 +1,26 @@
 import Image from "next/image";
 import React from "react";
+import { useRouter } from "next/router";
 import { motion } from "framer-motion";
 import { bottomUp } from "@/animationVariants";
 
-const ArticleCard = ({ className = "", onClick }) => {
+const ArticleCard = ({ className = "", article }) => {
+  const {
+    title,
+    publication_date,
+    reading_time,
+    views_count,
+    subtitle,
+    blog_id,
+    cover,
+  } = article;
+
+  const router = useRouter();
+
+  const handleClick = () => {
+    router.push(`/article/${blog_id}`);
+  };
+
   return (
     <motion.div
       whileHover={{
@@ -16,11 +33,11 @@ const ArticleCard = ({ className = "", onClick }) => {
       variants={bottomUp}
       viewport={{ once: true }}
       className={`${className} rounded-lg `}
-      onClick={onClick}
+      onClick={handleClick}
     >
       <Image
         className="aspect-[3/4] rounded-lg  hover:border border-secondary p-1"
-        src="/images/gf_about_me.png"
+        src={cover}
         alt="G-F brand robot welcoming blog readers"
         width={0}
         height={0}
@@ -28,9 +45,9 @@ const ArticleCard = ({ className = "", onClick }) => {
         style={{ width: "100%", height: "auto" }}
       />
       <h1 className="text-lg font-semibold text-slate-600 mt-5">
-        January 26th, 2024 - 5 min read
+        {publication_date} - {reading_time}
       </h1>
-      <h1 className="text-xl font-bold mt-5">Embedding Models</h1>
+      <h1 className="text-xl font-bold mt-5">{title}</h1>
     </motion.div>
   );
 };
