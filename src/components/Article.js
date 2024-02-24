@@ -17,8 +17,15 @@ const ArticleCard = ({ className = "", article }) => {
 
   const router = useRouter();
 
-  const handleClick = () => {
+  const handleClick2 = () => {
     router.push(`/article/${blog_id}`);
+  };
+
+  const handleClick = () => {
+    router.push({
+      pathname: `/article/${blog_id}`,
+      query: { name: "Someone" },
+    });
   };
 
   return (

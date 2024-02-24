@@ -3,42 +3,18 @@ import ArticleCard from "@/components/Article";
 import Featured from "@/components/Featured";
 import Layout from "@/components/Layout";
 import { useRouter } from "next/router";
-import { React, useEffect, useState } from "react";
+import { React } from "react";
 import { motion } from "framer-motion";
 import { bottomUp } from "@/animationVariants";
+import { useGetArticlesListQuery } from "@/services/aws";
 
 const ArticlesPage = () => {
   const router = useRouter();
-  const [articles, setArticles] = useState(null); // Initially set articles to null
-  const [loading, setLoading] = useState(true); // Initially set loading to true
-
-  useEffect(() => {
-    // Function to fetch articles from the S3 link
-    const fetchArticles = async () => {
-      try {
-        // Make a request to your S3 link to fetch articles
-        const response = await fetch(
-          "https://ze82cjgyq5.execute-api.eu-west-1.amazonaws.com/v1/articles"
-        );
-        if (!response.ok) {
-          throw new Error("Failed to fetch articles");
-        }
-        // Assuming the response is in JSON format
-        const data = await response.json();
-        setArticles(data); // Set the fetched articles in state
-        setLoading(false); // Set loading to false after fetching articles
-      } catch (error) {
-        console.error(error);
-        setLoading(false); // Set loading to false in case of an error
-      }
-    };
-
-    fetchArticles(); // Call the fetchArticles function when component mounts
-  }, []);
+  const { data, error, isLoading } = useGetArticlesListQuery();
 
   return (
     <Layout className="!py-0">
-      {loading ? (
+      {isLoading ? (
         <motion.h1>Loading...</motion.h1> // Display "Loading..." when loading is true
       ) : (
         <>
@@ -57,7 +33,7 @@ const ArticlesPage = () => {
           />
           <Featured className="mt-10" />
           <div className="grid grid-cols-12 gap-x-4 mt-10">
-            {articles.map((article, index) => (
+            {data.map((article, index) => (
               <ArticleCard
                 key={index}
                 article={article}

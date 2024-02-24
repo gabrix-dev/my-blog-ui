@@ -3,7 +3,8 @@ import { Montserrat } from "next/font/google";
 import Head from "next/head";
 import NavBar from "@/components/NavBar";
 import Footer from "@/components/Footer";
-// import Footer from "@/components/Footer";
+import { Provider } from "react-redux";
+import { store } from "@/app/store";
 
 const montserrat = Montserrat({
   subsets: ["latin"],
@@ -17,13 +18,15 @@ export default function App({ Component, pageProps }) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main
-        className={`${montserrat.variable} font-mont bg-white  w-full min-h-screen`}
-      >
-        <NavBar />
-        <Component {...pageProps} />
-        <Footer className="" />
-      </main>
+      <Provider store={store}>
+        <main
+          className={`${montserrat.variable} font-mont bg-white  w-full min-h-screen`}
+        >
+          <NavBar />
+          <Component {...pageProps} />
+          <Footer className="" />
+        </main>
+      </Provider>
     </>
   );
 }
