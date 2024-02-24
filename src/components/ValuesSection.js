@@ -68,7 +68,7 @@ const ValuesSection = () => {
           viewport={{ once: true }}
         >
           <Image
-            src="/images/gf_about_me.png"
+            src="/images/surf.JPG"
             alt="G-F brand robot welcoming blog readers"
             className="rounded-xl"
             width={0}
