@@ -7,38 +7,52 @@ import { useEffect, useState } from "react";
 import Markdown from "react-markdown";
 import { EyeIcon } from "@heroicons/react/24/outline";
 
+function getArticleId() {
+  let url = window.location.pathname;
+  const parts = url.split("/");
+  const articleId = parts[parts.length - 1];
+  return articleId;
+}
+
 const Article = () => {
   const router = useRouter();
-  const { article_id } = router.query;
   const [article, setArticle] = useState(null);
+  const [loading, setLoading] = useState(true); // Initially set loading to true
+  var article_id = "";
 
   useEffect(() => {
+    article_id = getArticleId();
     const fetchArticle = async () => {
-      const mockArticle = {
-        id: article_id,
-        title: "Starting a Blog",
-        subtitle: "Why I started a blog and how I built it",
-        cover:
-          "https://d1lf7jq9a5epx3.cloudfront.net/wp-content/uploads/sites/4/2022/02/what-is-a-blog-1200x600-1.jpeg",
-        content: "# Introduction",
-      };
-      setArticle(mockArticle);
+      try {
+        console.log("ARTICLE ID: " + article_id);
+        const response = await fetch(
+          `https://ze82cjgyq5.execute-api.eu-west-1.amazonaws.com/v1/article/${article_id}`
+        );
+        if (!response.ok) {
+          throw new Error("Failed to fetch articles");
+        }
+        const data = await response.text();
+        console.log(data);
+        setArticle(data); // Set the fetched article in state
+        setLoading(false); // Set loading to false after fetching article
+      } catch (error) {
+        console.error(error);
+        setLoading(false); // Set loading to false in case of an error
+      }
     };
 
-    if (article_id) {
-      fetchArticle();
-    }
-  }, [article_id]);
+    fetchArticle(); // Call the fetchArticles function when component mounts
+  }, []);
 
-  if (!article) {
+  if (loading) {
     return <div>Loading...</div>;
   }
 
   return (
     <div>
       <Layout className="min-h-screen">
-        <h1 className="text-left text-6xl font-bold">{article.title}</h1>
-        <h2 className="text-gray-600 text-2xl mt-8">{article.subtitle}</h2>
+        <h1 className="text-left text-6xl font-bold">Hardcoded title</h1>
+        <h2 className="text-gray-600 text-2xl mt-8">Hardcoded subtitle</h2>
         <div className="flex gap-6 items-center mt-5 border-t border-b border-gray-300 py-2">
           <h1 className="text-md font-normal text-slate-600">
             January 26th, 2024 - 5 min read
@@ -59,7 +73,7 @@ const Article = () => {
           style={{ width: "auto", height: "100%" }}
         />
 
-        <Markdown className="markdown">{article.content}</Markdown>
+        <Markdown className="markdown">{article}</Markdown>
       </Layout>
     </div>
   );
