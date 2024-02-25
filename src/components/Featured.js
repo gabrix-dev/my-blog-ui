@@ -55,8 +55,7 @@ const Featured = ({ className = "", article }) => {
         <div className="flex items-end lg:mt-0 mt-5">
           <Image
             className="aspect-[4/3] lg:aspect-[4/5] rounded-xl mx-auto"
-            src="/images/gf_about_me.png"
-            alt="G-F brand robot welcoming blog readers"
+            src={article.cover}
             width={0}
             height={0}
             sizes="100vw"

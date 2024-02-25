@@ -1,7 +1,18 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    domains: ["www.fcbarcelona.com", "i.postimg.cc"],
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'i.postimg.cc',
+        pathname: '**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'www.fcbarcelona.com',
+        pathname: '**',
+      },
+    ],
   },
 };
 

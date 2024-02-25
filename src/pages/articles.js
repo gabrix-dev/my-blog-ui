@@ -7,6 +7,8 @@ import { React } from "react";
 import { motion } from "framer-motion";
 import { bottomUp } from "@/animationVariants";
 import { useGetArticlesListQuery } from "@/services/aws";
+import Loader from "@/components/Loader";
+
 
 const ArticlesPage = () => {
   const router = useRouter();
@@ -15,7 +17,7 @@ const ArticlesPage = () => {
   return (
     <Layout className="!py-0">
       {isLoading ? (
-        <h1>Loading...</h1> // Display "Loading..." when loading is true
+          <Loader/>
       ) : (
         <>
           <motion.h1

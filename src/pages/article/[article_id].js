@@ -6,6 +6,9 @@ import { useRouter } from "next/router";
 import { EyeIcon } from "@heroicons/react/24/outline";
 import { useGetArticleQuery, useGetArticlesListQuery } from "@/services/aws";
 import MarkdownRenderer from "@/components/MarkdownRenderer";
+import Loader from "@/components/Loader";
+import { motion } from "framer-motion";
+import { bottomUp } from "@/animationVariants";
 
 function getArticleId() {
   if (typeof window !== "undefined") {
@@ -33,9 +36,9 @@ const Article = () => {
     <div>
       <Layout className="min-h-screen lg:!px-[30vw]">
         {isLoading || isLoadingList ? (
-          <h1>Loading...</h1> 
+          <Loader/>
         ) : (
-          <>
+          <motion.div initial="initial" animate="animate" variants={bottomUp}>
             <h1 className="text-left text-6xl font-bold">{articleMetadata.title}</h1>
             <h2 className="text-gray-600 text-2xl mt-8">{articleMetadata.subtitle}</h2>
             <div className="flex gap-6 items-center mt-5 border-t border-b border-gray-300 py-2">
@@ -59,7 +62,7 @@ const Article = () => {
             />
 
             <MarkdownRenderer>{article}</MarkdownRenderer>
-          </>
+            </motion.div>
         )}
       </Layout>
     </div>

@@ -16,6 +16,22 @@ export const zoomInOut = {
   },
 };
 
+export const fadeIn = {
+  initial: {
+    opacity: 0,
+  },
+  animate: {
+    opacity: 1,
+    transition: {
+      delay: 0.0,
+      duration: 1.5,
+      // type: "spring",
+      // stiffness: 150,
+      // damping: 5,
+    },
+  },
+};
+
 export const rightLeftBounce1 = {
   initial: { opacity: 0, x: 50 },
   animate: {

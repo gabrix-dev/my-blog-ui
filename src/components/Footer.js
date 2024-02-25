@@ -5,7 +5,7 @@ import Link from "next/link";
 const Footer = () => {
   return (
     <div>
-      <Layout className=" w-full !px-0 !pb-8">
+      <Layout className=" w-full !px-0 !pb-8 !min-h-0">
         <footer className="flex items-center justify-between flex-col gap-6 border-t-2 border-solid border-gray-200 mt-20 ">
           {/* <footer className="w-full font-medium text-lg  text-gray-500"> */}
 
