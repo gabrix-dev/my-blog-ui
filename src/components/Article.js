@@ -17,15 +17,8 @@ const ArticleCard = ({ className = "", article }) => {
 
   const router = useRouter();
 
-  const handleClick2 = () => {
-    router.push(`/article/${blog_id}`);
-  };
-
   const handleClick = () => {
-    router.push({
-      pathname: `/article/${blog_id}`,
-      query: { name: "Someone" },
-    });
+    router.push(`/article/${blog_id}`);
   };
 
   return (
@@ -43,7 +36,7 @@ const ArticleCard = ({ className = "", article }) => {
       onClick={handleClick}
     >
       <Image
-        className="aspect-[3/4] rounded-lg  hover:border border-secondary p-1"
+        className="aspect-[4/4] rounded-lg  hover:border border-secondary p-1"
         src={cover}
         alt="G-F brand robot welcoming blog readers"
         width={0}
@@ -52,7 +45,7 @@ const ArticleCard = ({ className = "", article }) => {
         style={{ width: "100%", height: "auto" }}
       />
       <h1 className="text-lg font-semibold text-slate-600 mt-5">
-        {publication_date} - {reading_time}
+        {publication_date} - {reading_time} read
       </h1>
       <h1 className="text-xl font-bold mt-5">{title}</h1>
     </motion.div>

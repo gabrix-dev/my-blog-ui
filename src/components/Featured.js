@@ -2,9 +2,16 @@ import Image from "next/image";
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { bottomUp, zoomInOut } from "@/animationVariants";
+import { useRouter } from "next/router";
 
-const Featured = ({ className = "" }) => {
+const Featured = ({ className = "", article }) => {
   const [isHovered, setIsHovered] = useState(false);
+
+  const router = useRouter();
+
+  const handleClick = () => {
+    router.push(`/article/${article.blog_id}`);
+  };
   return (
     <motion.div
       whileHover={{
@@ -16,6 +23,7 @@ const Featured = ({ className = "" }) => {
       animate="animate"
       variants={bottomUp}
       className={`${className} hover:border border-secondary p-1 rounded-lg`}
+      onClick={handleClick}
     >
       <div
         className={` w-full bg-gray-200 rounded-lg lg:py-20 py-10 lg:px-16 px-4 grid lg:grid-cols-2 grid-cols-1 gap-4 hover:cursor-pointer`}
@@ -28,10 +36,10 @@ const Featured = ({ className = "" }) => {
               Featured article
             </h1>
             <h1 className="lg:text-4xl text-2xl font-medium mt-5">
-              Starting a Blog{" "}
+              {article.title}
             </h1>
             <h1 className="lg:text-lg text-sm font-semibold text-slate-400 lg:mt-5 mt-3">
-              January 26th, 2024 - 5 min read
+              {article.publication_date} - {article.reading_time} read
             </h1>
           </div>
           <div className="">

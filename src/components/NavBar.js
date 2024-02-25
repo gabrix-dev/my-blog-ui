@@ -58,7 +58,7 @@ const NavBar = () => {
     <header className="w-full px-16 lg:px-60 py-16 flex items-center justify-between relative z-10 bg-light">
       <div className="w-full lg:hidden justify-between items-center flex">
         <h1 className="font-semibold text-lg text-orange-400">
-          Gabriel Fortià
+          Not Just a Developer
         </h1>
         <button
           className="flex-col justify-center items-center"
@@ -84,7 +84,7 @@ const NavBar = () => {
 
       <div className="w-full lg:flex justify-between items-center hidden">
         <h1 className="font-semibold text-2xl text-orange-400  ">
-          Gabriel Fortià
+        Not Just a Developer
         </h1>
         <nav className="flex gap-16">
           <CustomLink href="/" title="Home" />

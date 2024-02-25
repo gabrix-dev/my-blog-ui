@@ -5,6 +5,7 @@ export const awsApi = createApi({
   baseQuery: fetchBaseQuery({
     baseUrl: "https://ze82cjgyq5.execute-api.eu-west-1.amazonaws.com/v1",
   }),
+  keepUnusedDataFor: 1800,
   endpoints: (builder) => ({
     getArticlesList: builder.query({
       query: () => `articles`,

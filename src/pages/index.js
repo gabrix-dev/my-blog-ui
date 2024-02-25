@@ -6,15 +6,16 @@ import Link from "next/link";
 import { LinkArrow } from "@/components/Icons";
 import { motion } from "framer-motion";
 import { buttonVariants, zoomInOut, bottomUp } from "../animationVariants.js";
+import SyntaxHighlighter from 'react-syntax-highlighter';
 
 import React from "react";
+import { useGetArticlesListQuery } from "@/services/aws.js";
 
 const RobotImage = () => {
   return (
     <motion.div initial="initial" animate="animate" variants={zoomInOut}>
       <Image
         src="/images/gf_robot_welcome.png"
-        alt="G-F brand robot welcoming blog readers"
         className=""
         width={0}
         height={0}
@@ -45,6 +46,9 @@ const CustomLink = ({ title, route, className = "" }) => {
 };
 
 export default function Home() {
+
+  useGetArticlesListQuery();
+
   return (
     <>
       <main className="flex text-dark w-full min-h-screen">

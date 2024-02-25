@@ -2,6 +2,27 @@
   all: revert;
 }
 
+.markdown p {
+  font-size: 20px;
+  text-align: justify;
+}
+
+.markdown h1 {
+  font-size: 35px;
+}
+
+.markdown h2 {
+  font-size: 30px;
+}
+
+.markdown h3 {
+  font-size: 25px;
+}
+
+.markdown h4 {
+  font-size: 20px;
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;

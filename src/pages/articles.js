@@ -15,7 +15,7 @@ const ArticlesPage = () => {
   return (
     <Layout className="!py-0">
       {isLoading ? (
-        <motion.h1>Loading...</motion.h1> // Display "Loading..." when loading is true
+        <h1>Loading...</h1> // Display "Loading..." when loading is true
       ) : (
         <>
           <motion.h1
@@ -31,7 +31,7 @@ const ArticlesPage = () => {
             className="w-full text-gray-600 text-base text-center lg:text-left lg:text-4xl mt-5 leading-tight !font-normal"
             text=" In this blog I share ideas, projects, reflections..."
           />
-          <Featured className="mt-10" />
+          <Featured className="mt-10" article={data[0]} />
           <div className="grid grid-cols-12 gap-x-4 mt-10">
             {data.map((article, index) => (
               <ArticleCard
