@@ -26,7 +26,7 @@ const RobotImage = () => {
   );
 };
 
-const CustomLink = ({ title, route, className = "" }) => {
+export const CustomLink = ({ title, route, className = "", icon: Icon, target }) => {
   return (
     <motion.div
       initial="initial"
@@ -37,8 +37,9 @@ const CustomLink = ({ title, route, className = "" }) => {
     >
       <Link
         href={route}
-        className={`p-2.5 px-6 rounded-lg text-lg font-semibold hover:shadow-lg ${className}`}
+        className={`p-2.5 px-6 flex rounded-lg text-lg font-semibold hover:shadow-lg ${className}`}
       >
+        {Icon && <Icon className="mr-2 !w-6 h-auto" />} {/* Render the icon if provided */}
         {title}
       </Link>
     </motion.div>
@@ -60,10 +61,10 @@ export default function Home() {
             <div className="lg:w-3/5 w-3/4 flex flex-col items-center self-center">
               <AnimatedText
                 text="Welcome to my Blog!"
-                className="lg:text-6xl text-xl lg:!text-left text-center"
+                className="2xl:text-6xl xl:text-5xl lg:text-4xl sm:text-3xl text-2xl lg:!text-left text-center"
               />
               <motion.p
-                className="my-4 lg:pr-24 text-lg font-medium text-center lg:text-left"
+                className="my-4 lg:pr-24 lg:text-lg text-md font-medium text-center lg:text-left"
                 initial="initial"
                 animate="animate"
                 variants={bottomUp}

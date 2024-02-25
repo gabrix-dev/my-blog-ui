@@ -17,7 +17,7 @@ const ArticlesPage = () => {
   return (
     <Layout className="!py-0">
       {isLoading ? (
-          <Loader/>
+        <Loader />
       ) : (
         <>
           <motion.h1
@@ -30,7 +30,7 @@ const ArticlesPage = () => {
           </motion.h1>
 
           <AnimatedText
-            className="w-full text-gray-600 text-base text-center lg:text-left lg:text-4xl mt-5 leading-tight !font-normal"
+            className="w-full text-gray-600 text-base text-center lg:text-left lg:text-2xl xl:text-4xl mt-5 leading-tight !font-normal"
             text=" In this blog I share ideas, projects, reflections..."
           />
           <Featured className="mt-10" article={data[0]} />

@@ -3,10 +3,8 @@ import SectionTitle from "./SectionTitle";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import {
-  leftRightBounce1,
-  leftRightBounce2,
-  leftRightBounce3,
-  rightLeftBounce1,
+  bottomUp,
+  leftRight1, rightLeft1, zoomInOut
 } from "@/animationVariants";
 
 const Value = ({ className = "", title, description, variants }) => {
@@ -29,11 +27,11 @@ const Value = ({ className = "", title, description, variants }) => {
 const ValuesSection = () => {
   return (
     <div className="mt-96" id="values_section">
-      <SectionTitle title="Values" variants={rightLeftBounce1} />
+      <SectionTitle title="Values" variants={leftRight1} />
       <motion.div
         className="lg:text-3xl text-md lg:text-left text-center text-gray-600 font-medium"
         initial="initial"
-        variants={rightLeftBounce1}
+        variants={rightLeft1}
         whileInView="animate"
         viewport={{ once: true }}
       >
@@ -42,19 +40,19 @@ const ValuesSection = () => {
       <div className="flex lg:flex-row flex-col lg:mt-10 mt-3 gap-14">
         <div className="lg:w-1/2">
           <Value
-            variants={leftRightBounce1}
+            variants={leftRight1}
             className="mt-5"
             title="Optimism"
             description="I firmly believe in the power of optimism to navigate life's challenges. It's not just about wishful thinking but about approaching obstacles with the firm belief that solutions exist. When faced with daunting tasks, I envision success and focus on the steps needed to achieve it."
           />
           <Value
-            variants={leftRightBounce1}
+            variants={rightLeft1}
             className="mt-10"
             title="Hard Work"
             description="Hard work has been the cornerstone of my journey. I've always believed that success is earned through dedication and perseverance. While talent may play a role, it's the hours of effort and commitment that truly make a difference. I embrace the grind, knowing that every ounce of sweat is an investment in my goals. "
           />
           <Value
-            variants={leftRightBounce1}
+            variants={leftRight1}
             className="mt-10"
             title="Constant Learning"
             description="My insatiable curiosity fuels a relentless pursuit of knowledge in every aspect of my life. Whether it's through the projects I work in, the conversations I engage in, the books I read, or the podcasts I eagerly listen to, I am constantly seeking to expand my horizons."
@@ -63,7 +61,7 @@ const ValuesSection = () => {
         <motion.div
           className="lg:w-1/2"
           initial="initial"
-          variants={rightLeftBounce1}
+          variants={bottomUp}
           whileInView="animate"
           viewport={{ once: true }}
         >

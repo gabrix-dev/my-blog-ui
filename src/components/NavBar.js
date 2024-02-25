@@ -3,10 +3,16 @@ import Link from "next/link";
 import { LinkedInIcon, MoonIcon, TwitterIcon } from "./Icons";
 import { useState } from "react";
 import { motion } from "framer-motion";
+import {
+  EnvelopeIcon,
+  Bars3Icon,
+  XMarkIcon
+} from "@heroicons/react/24/outline";
+import { LINKEDIN_URL as myLinkedinUrl, TWITTER_URL as myTwitterUrl, MAIL_URL as myMailUrl } from '../app/constants';
+
 
 const CustomLink = ({ href, title, className = "" }) => {
   const router = useRouter();
-
   return (
     <Link
       href={href}
@@ -14,7 +20,7 @@ const CustomLink = ({ href, title, className = "" }) => {
     >
       {title}
       <span
-        className={`h-[1px]  inline-block bg-orange-500 absolute left-0 -bottom-0.5 group-hover:w-full transition-[width] ease duration-300
+        className={`h-[1px]  inline-block bg-secondary absolute left-0 -bottom-0.5 group-hover:w-full transition-[width] ease duration-300
            ${router.asPath === href ? "w-full" : "w-0"}`}
       >
         &nbsp;
@@ -32,7 +38,7 @@ const CustomMobileLink = ({ href, title, className = "", toggle }) => {
   return (
     <button
       href={href}
-      className={`${className} relative group my-2`}
+      className={`${className} relative group my-2 text-black`}
       onClick={handleClick}
     >
       {title}
@@ -55,7 +61,7 @@ const NavBar = () => {
   };
 
   return (
-    <header className="w-full px-16 lg:px-60 py-16 flex items-center justify-between relative z-10 bg-light">
+    <header className="w-full px-8 md:px-16 lg:px-32 2xl:px-60 md:py-16 py-10 flex items-center justify-between relative z-10 bg-light">
       <div className="w-full lg:hidden justify-between items-center flex">
         <h1 className="font-semibold text-lg text-orange-400">
           Not Just a Developer
@@ -64,38 +70,29 @@ const NavBar = () => {
           className="flex-col justify-center items-center"
           onClick={handleClick}
         >
-          <span
-            className={`bg-dark block transition-all duration-300 ease-out  h-0.5 w-6 rounded-sm  ${
-              isOpen ? "rotate-45 translate-y-1" : "-translate-y-0.5"
-            }`}
-          ></span>
-          <span
-            className={`bg-dark block transition-all duration-300 ease-out h-0.5 w-6 rounded-sm my-0.5 ${
-              isOpen ? "opacity-0" : "opacity-100}"
-            }`}
-          ></span>
-          <span
-            className={`bg-dark block transition-all duration-300 ease-out h-0.5 w-6 rounded-sm translate-y-0.5 ${
-              isOpen ? "-rotate-45 -translate-y-1" : "translate-y-0.5"
-            }`}
-          ></span>
+          {isOpen ? <XMarkIcon className="w-6 text-secondary" /> : <Bars3Icon className="w-6 text-secondary" />}
         </button>
       </div>
 
       <div className="w-full lg:flex justify-between items-center hidden">
         <h1 className="font-semibold text-2xl text-orange-400  ">
-        Not Just a Developer
+          Not Just a Developer
         </h1>
-        <nav className="flex gap-16">
+        <nav className="flex lg:gap-16">
           <CustomLink href="/" title="Home" />
           <CustomLink href="/about" title="About" />
           <CustomLink href="/articles" title="Articles" />
-          <CustomLink href="/contact" title="Subscribe" />
         </nav>
-        <div className="flex gap-6">
-          <LinkedInIcon />
-          <TwitterIcon />
-          <MoonIcon />
+        <div className="flex gap-6 items-center">
+          <motion.a href={myTwitterUrl} target="_blank" whileHover={{ y: -3 }} whileTap={{ scale: 0.9 }}>
+            <TwitterIcon />
+          </motion.a>
+          <motion.a href={myLinkedinUrl} target="_blank" whileHover={{ y: -3 }} whileTap={{ scale: 0.9 }}>
+            <LinkedInIcon />
+          </motion.a>
+          <motion.a href={myMailUrl} target="_blank" whileHover={{ y: -3 }} whileTap={{ scale: 0.9 }} >
+            <EnvelopeIcon className="text-blue-600 w-5 h-auto" />
+          </motion.a>
         </div>
       </div>
 
@@ -127,7 +124,7 @@ const NavBar = () => {
           </nav>
           <nav className="flex items-center justify-center flex-wrap mt-10">
             <motion.a
-              href="https://twitter.com"
+              href={myTwitterUrl}
               target="_blank"
               whileHover={{ y: -2 }}
               whileTap={{ scale: 0.9 }}
@@ -136,13 +133,22 @@ const NavBar = () => {
               <TwitterIcon />
             </motion.a>
             <motion.a
-              href="https://linkedin.com"
+              href={myLinkedinUrl}
               target="_blank"
               whileHover={{ y: -2 }}
               whileTap={{ scale: 0.9 }}
               className="w-6 mx-3"
             >
               <LinkedInIcon />
+            </motion.a>
+            <motion.a
+              href={myLinkedinUrl}
+              target="_blank"
+              whileHover={{ y: -2 }}
+              whileTap={{ scale: 0.9 }}
+              className="w-6 mx-3"
+            >
+              <EnvelopeIcon className="text-blue-600 w-5 h-auto" />
             </motion.a>
           </nav>
         </motion.div>

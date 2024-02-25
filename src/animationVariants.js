@@ -47,49 +47,6 @@ export const rightLeftBounce1 = {
   },
 };
 
-export const leftRightBounce1 = {
-  initial: { opacity: 0, x: -50 },
-  animate: {
-    opacity: 1,
-    x: 0,
-    transition: {
-      duration: 1,
-      delay: 0.4,
-      type: "spring",
-      stiffness: 150,
-      damping: 5,
-    },
-  },
-};
-
-export const leftRightBounce2 = {
-  initial: { opacity: 0, x: -50 },
-  animate: {
-    opacity: 1,
-    x: 0,
-    transition: {
-      duration: 1,
-      type: "spring",
-      stiffness: 150,
-      damping: 5,
-    },
-  },
-};
-
-export const leftRightBounce3 = {
-  initial: { opacity: 0, x: -50 },
-  animate: {
-    opacity: 1,
-    x: 0,
-    transition: {
-      duration: 1,
-      type: "spring",
-      stiffness: 150,
-      damping: 5,
-    },
-  },
-};
-
 export const rightLeft1 = {
   initial: { opacity: 0, x: -50 },
   animate: { opacity: 1, x: 0, transition: { duration: 1, delay: 0.2 } },

@@ -35,7 +35,7 @@ const Featured = ({ className = "", article }) => {
             <h1 className="font-medium lg:text-base text-xs">
               Featured article
             </h1>
-            <h1 className="lg:text-4xl text-2xl font-medium mt-5">
+            <h1 className="xl:text-4xl text-2xl font-medium mt-5">
               {article.title}
             </h1>
             <h1 className="lg:text-lg text-sm font-semibold text-slate-400 lg:mt-5 mt-3">
@@ -44,9 +44,8 @@ const Featured = ({ className = "", article }) => {
           </div>
           <div className="">
             <div
-              className={`font-semibold lg:text-lg text-xs underline decoration-orange-500 lg:mt-0 mt-6  ${
-                isHovered ? "underline underline-offset-2" : "no-underline"
-              }`}
+              className={`font-semibold lg:text-lg text-xs underline decoration-orange-500 lg:mt-0 mt-6  ${isHovered ? "underline underline-offset-2" : "no-underline"
+                }`}
             >
               Read full article
             </div>

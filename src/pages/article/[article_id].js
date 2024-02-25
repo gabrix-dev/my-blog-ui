@@ -34,21 +34,17 @@ const Article = () => {
 
   return (
     <div>
-      <Layout className="min-h-screen lg:!px-[30vw]">
+      <Layout className="min-h-screen lg:!px-[27vw] !pt-0 md:!pt-16">
         {isLoading || isLoadingList ? (
-          <Loader/>
+          <Loader />
         ) : (
           <motion.div initial="initial" animate="animate" variants={bottomUp}>
-            <h1 className="text-left text-6xl font-bold">{articleMetadata.title}</h1>
-            <h2 className="text-gray-600 text-2xl mt-8">{articleMetadata.subtitle}</h2>
+            <h1 className="text-left text-3xl md:text-6xl font-bold">{articleMetadata.title}</h1>
+            <h2 className="text-gray-600 text-md md:text-2xl mt-4 md:mt-8">{articleMetadata.subtitle}</h2>
             <div className="flex gap-6 items-center mt-5 border-t border-b border-gray-300 py-2">
-              <h1 className="text-md font-normal text-slate-600">
-               {articleMetadata.publication_date} - {articleMetadata.reading_time} read
+              <h1 className="md:text-md text-sm font-normal text-slate-600">
+                {articleMetadata.publication_date} - {articleMetadata.reading_time} read
               </h1>
-              <div className="flex items-center ">
-                <EyeIcon className="w-5 h-5 text-gray-600" />
-                <span className="ml-2">374</span>
-              </div>
             </div>
 
             <Image
@@ -62,7 +58,7 @@ const Article = () => {
             />
 
             <MarkdownRenderer>{article}</MarkdownRenderer>
-            </motion.div>
+          </motion.div>
         )}
       </Layout>
     </div>

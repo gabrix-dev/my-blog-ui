@@ -5,7 +5,6 @@ import NavBar from "@/components/NavBar";
 import Footer from "@/components/Footer";
 import { Provider } from "react-redux";
 import { store } from "@/app/store";
-import { useGetArticlesListQuery } from "@/services/aws";
 
 const montserrat = Montserrat({
   subsets: ["latin"],

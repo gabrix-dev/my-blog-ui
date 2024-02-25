@@ -38,7 +38,7 @@ const AboutSection = ({
       className="rounded-lg hover:shadow-lg hover:border hover:border-secondary"
     >
       <Link
-        className="flex items-center rounded-xl p-3 text-gray-600 text-xl font-semibold"
+        className="flex items-center rounded-xl p-3 text-gray-600 text-lg xl:text-xl font-semibold"
         href={anchor}
       >
         <IconComponent className="h-8 w-8 text-secondary mr-4" />
@@ -56,7 +56,7 @@ export default function About({ className }) {
           <div>
             <div className="place-self-center">
               <motion.h1
-                className="lg:text-8xl lg:text-left text-center text-3xl font-bold"
+                className="xl:text-8xl md:text-left text-center md:text-5xl text-3xl font-bold"
                 initial="initial"
                 animate="animate"
                 variants={leftRight1}
@@ -66,14 +66,14 @@ export default function About({ className }) {
                 </span>
               </motion.h1>
               <motion.h2
-                className="lg:text-6xl lg:text-left text-xl font-extrabold flex lg:mt-4 mt-2"
+                className="xl:text-6xl md:text-3xl md:text-left text-xl font-extrabold flex md:mt-4 mt-2"
                 initial="initial"
                 animate="animate"
                 variants={leftRight1}
               >
                 <br></br>
                 <TypeAnimation
-                  className="mx-auto lg:mx-0"
+                  className="mx-auto md:mx-0"
                   style={{ color: "#FF8C00" }}
                   sequence={[
                     "a Telecomm Engineer",
@@ -82,9 +82,9 @@ export default function About({ className }) {
                     1000,
                     "an AI Enthusiast",
                     1000,
-                    "a Dreamer",
+                    "a Builder",
                     1000,
-                    "a Builder.",
+                    "Not Just a Developer.",
                     6000,
                   ]}
                   wrapper="span"
@@ -96,7 +96,7 @@ export default function About({ className }) {
                 initial="initial"
                 animate="animate"
                 variants={rightLeft1}
-                className="text-gray-600 text-base text-center sm:text-lg lg:text-3xl lg:w-2/3 mt-10 leading-normal lg:text-left"
+                className="text-gray-600 text-base text-center sm:text-lg md:text-xl xl:text-3xl md:w-2/3 mt-10 leading-normal md:text-left"
               >
                 I am on a constant journey of discovery, exploring the intricate
                 complexities of our ever-changing world
@@ -105,7 +105,7 @@ export default function About({ className }) {
             </div>
           </div>
           <div className="pt-12">
-            <div className="items-center flex lg:flex-row flex-col lg:gap-14 gap-5 min-w-min">
+            <div className="items-center flex md:flex-row flex-col md:gap-14 gap-5 min-w-min">
               <AboutSection
                 title="Story"
                 anchor="#story_section"

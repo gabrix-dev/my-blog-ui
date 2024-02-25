@@ -36,7 +36,7 @@ const ArticleCard = ({ className = "", article }) => {
       onClick={handleClick}
     >
       <Image
-        className="aspect-[4/4] rounded-lg  hover:border border-secondary p-1"
+        className="aspect-[4/3] lg:aspect-[4/4] rounded-lg  hover:border border-secondary p-1"
         src={cover}
         alt="G-F brand robot welcoming blog readers"
         width={0}
