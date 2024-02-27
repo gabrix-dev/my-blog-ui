@@ -55,10 +55,12 @@ const Featured = ({ className = "", article }) => {
           <Image
             className="aspect-[4/3] lg:aspect-[4/5] rounded-xl mx-auto"
             src={article.cover}
+            alt="featured article cover"
             width={0}
             height={0}
             sizes="100vw"
             style={{ width: "70%", height: "auto" }}
+            priority
           />
         </div>
       </div>

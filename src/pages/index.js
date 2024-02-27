@@ -21,6 +21,7 @@ const RobotImage = () => {
         height={0}
         sizes="100vw"
         style={{ width: "100%", height: "auto" }}
+        priority
       />
     </motion.div>
   );
@@ -30,6 +31,7 @@ export const CustomLink = ({ title, route, className = "", icon: Icon, target })
   return (
     <motion.div
       initial="initial"
+      alt="friendly robot welcoming blog readers"
       animate="animate"
       whileHover="hover"
       whileTap="tap"
