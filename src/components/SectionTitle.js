@@ -1,6 +1,5 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { bottomUp } from "@/animationVariants";
 
 const SectionTitle = ({ title, className = "", variants }) => {
   return (

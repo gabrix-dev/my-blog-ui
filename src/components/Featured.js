@@ -1,8 +1,8 @@
-import Image from "next/image";
-import React, { useState } from "react";
+import { bottomUp } from "@/animationVariants";
 import { motion } from "framer-motion";
-import { bottomUp, zoomInOut } from "@/animationVariants";
+import Image from "next/image";
 import { useRouter } from "next/router";
+import { useState } from "react";
 
 const Featured = ({ className = "", article }) => {
   const [isHovered, setIsHovered] = useState(false);

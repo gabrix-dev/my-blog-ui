@@ -1,12 +1,10 @@
-import React from "react";
-import Layout from "./Layout";
-import Link from "next/link";
-import { LinkedInIcon, LinkedinOutlineIcon, MyBlogLogo } from "./Icons";
 import { CustomLink } from "@/pages";
 import {
   EnvelopeIcon,
 } from "@heroicons/react/24/outline";
 import { LINKEDIN_URL as myLinkedinUrl, MAIL_URL as myMailUrl } from '../app/constants';
+import { LinkedinOutlineIcon, MyBlogLogo } from "./Icons";
+import Layout from "./Layout";
 
 const Footer = () => {
   return (

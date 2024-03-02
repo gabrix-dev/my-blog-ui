@@ -1,11 +1,10 @@
-import React from "react";
-import SectionTitle from "./SectionTitle";
-import Image from "next/image";
-import { motion } from "framer-motion";
 import {
   bottomUp,
-  leftRight1, rightLeft1, zoomInOut
+  leftRight1, rightLeft1
 } from "@/animationVariants";
+import { motion } from "framer-motion";
+import Image from "next/image";
+import SectionTitle from "./SectionTitle";
 
 const Value = ({ className = "", title, description, variants }) => {
   return (

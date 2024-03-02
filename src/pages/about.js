@@ -1,22 +1,20 @@
 //disciplina de ferro, optimisme i aprenentatge constant
 //I do whatever is required to complete my objectives
 
-import { TypeAnimation } from "react-type-animation";
-import Layout from "@/components/Layout";
-import StorySection from "@/components/StorySection";
-import FactsSection from "@/components/FactsSection";
-import ValuesSection from "@/components/ValuesSection";
-import { BookOpenIcon, StarIcon, GiftIcon } from "@heroicons/react/24/outline";
-import { motion } from "framer-motion";
 import {
-  zoomInOut,
+  leftRight1,
   rightLeft1,
   rightLeft2,
-  rightLeft3,
-  leftRight1,
+  rightLeft3
 } from "@/animationVariants";
+import FactsSection from "@/components/FactsSection";
+import Layout from "@/components/Layout";
+import StorySection from "@/components/StorySection";
+import ValuesSection from "@/components/ValuesSection";
+import { BookOpenIcon, GiftIcon, StarIcon } from "@heroicons/react/24/outline";
+import { motion } from "framer-motion";
+import { TypeAnimation } from "react-type-animation";
 
-import React from "react";
 import Link from "next/link";
 
 const AboutSection = ({

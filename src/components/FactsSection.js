@@ -1,21 +1,13 @@
-// 2nd career choice: plitics --> I like debating and feel strong at convincing people
-//I go to the gym before work every day
-//I count calories and create my diets bassed on gym objectives
-//I listen to podcasts all day long
-//I love economy, have read some books about it
-//I live in Barcelona ? I love eggs: fats, proteins, vitamins...
-
-import React from "react";
-import { ChefIcon, DumbellIcon } from "./Icons";
+import { leftRight1, rightLeft1 } from "@/animationVariants";
 import {
   BookOpenIcon,
-  SpeakerWaveIcon,
   ClipboardDocumentIcon,
   HeartIcon,
+  SpeakerWaveIcon,
 } from "@heroicons/react/24/outline";
-import SectionTitle from "./SectionTitle";
 import { motion } from "framer-motion";
-import { leftRight1, rightLeft1, rotationLeftRight } from "@/animationVariants";
+import { ChefIcon, DumbellIcon } from "./Icons";
+import SectionTitle from "./SectionTitle";
 
 const factsAboutMe = [
   {

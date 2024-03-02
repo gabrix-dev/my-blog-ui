@@ -19,5 +19,4 @@ export const awsApi = createApi({
   }),
 });
 
-export const { useGetArticlesListQuery } = awsApi;
-export const { useGetArticleQuery } = awsApi;
+export const { useGetArticlesListQuery, useGetArticleQuery } = awsApi

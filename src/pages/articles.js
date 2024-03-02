@@ -1,14 +1,12 @@
+import { bottomUp } from "@/animationVariants";
 import AnimatedText from "@/components/AnimatedText";
 import ArticleCard from "@/components/Article";
 import Featured from "@/components/Featured";
 import Layout from "@/components/Layout";
-import { useRouter } from "next/router";
-import { React } from "react";
-import { motion } from "framer-motion";
-import { bottomUp } from "@/animationVariants";
-import { useGetArticlesListQuery } from "@/services/aws";
 import Loader from "@/components/Loader";
-
+import { useGetArticlesListQuery } from "@/services/aws";
+import { motion } from "framer-motion";
+import { useRouter } from "next/router";
 
 const ArticlesPage = () => {
   const router = useRouter();
