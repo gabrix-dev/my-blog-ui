@@ -15,7 +15,7 @@ const Footer = () => {
           <div className="flex justify-center items-center flex-col md:flex-row">
             <MyBlogLogo className="mt-6 lg:h-52 h-40 shrink flex order-last md:order-first " />
             <div className="mt-10 flex-col flex lg:gap-5 gap-3 items-center ">
-              <h2 className="font-semibold text-lg md:text-xl lg:text-2xl">Thanks for visitting!</h2>
+              <h2 className="font-semibold text-lg md:text-xl lg:text-2xl">Thanks for visiting!</h2>
               <h3 className="lg:text-lg text-sm text-center w-56 md:w-64 lg:w-96">Your presence is appreciated. Feel free to reach out anytime, I'd love to connect!</h3>
               <div className="flex md:flex-row flex-col gap-4">
                 <CustomLink
