@@ -2,7 +2,7 @@ import CustomLink from '@/components/CustomLink'
 import Layout from '@/components/Layout'
 import Image from 'next/image'
 
-export default function NotFound() {
+export default function ErrorPage() {
     return (
         <Layout className='!py-0'>
             <div className='flex flex-col gap-10 w-2/3 mx-auto'>
