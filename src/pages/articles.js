@@ -33,7 +33,7 @@ const ArticlesPage = () => {
           />
           <Featured className="lg:mt-10 mt-3" article={data[0]} />
           <div className="grid grid-cols-12 gap-x-4 mt-10">
-            {data.map((article, index) => (
+            {data.slice().reverse().map((article, index) => (
               <ArticleCard
                 key={index}
                 article={article}
