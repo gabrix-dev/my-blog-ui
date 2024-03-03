@@ -3,7 +3,6 @@
 import Layout from "@/components/Layout";
 import Image from "next/image";
 import { useRouter } from "next/router";
-import { EyeIcon } from "@heroicons/react/24/outline";
 import { useGetArticleQuery, useGetArticlesListQuery } from "@/services/aws";
 import MarkdownRenderer from "@/components/MarkdownRenderer";
 import Loader from "@/components/Loader";
@@ -32,10 +31,14 @@ const Article = () => {
     articleMetadata = articleList.find(article => article.blog_id === article_id);
   }
 
+  if (isError || isErrorList) {
+    router.push(`/notfound`)
+  }
+
   return (
     <div>
       <Layout className="min-h-screen lg:!px-[27vw] !pt-0 md:!pt-16">
-        {isLoading || isLoadingList ? (
+        {isLoading || isLoadingList || isError || isErrorList ? (
           <Loader />
         ) : (
           <motion.div initial="initial" animate="animate" variants={bottomUp}>

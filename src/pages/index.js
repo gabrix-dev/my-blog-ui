@@ -3,13 +3,13 @@ import AnimatedText from "@/components/AnimatedText";
 import Layout from "@/components/Layout";
 import { motion } from "framer-motion";
 import Image from "next/image";
-import Link from "next/link";
 import { useDispatch, useSelector } from 'react-redux';
 import { bottomUp, buttonVariants, zoomInOut } from "../animationVariants.js";
 
 import Loader from "@/components/Loader.js";
 import { useGetArticlesListQuery } from "@/services/aws.js";
 import { useState } from "react";
+import CustomLink from '@/components/CustomLink.js';
 
 const RobotImage = () => {
   return (
@@ -23,27 +23,6 @@ const RobotImage = () => {
         style={{ width: "100%", height: "auto" }}
         priority
       />
-    </motion.div>
-  );
-};
-
-export const CustomLink = ({ title, route, className = "", icon: Icon, target }) => {
-  return (
-    <motion.div
-      initial="initial"
-      alt="friendly robot welcoming blog readers"
-      animate="animate"
-      whileHover="hover"
-      whileTap="tap"
-      variants={buttonVariants}
-    >
-      <Link
-        href={route}
-        className={`p-2.5 px-6 flex rounded-lg text-lg font-semibold hover:shadow-lg ${className}`}
-      >
-        {Icon && <Icon className="mr-2 !w-6 h-auto" />} {/* Render the icon if provided */}
-        {title}
-      </Link>
     </motion.div>
   );
 };
