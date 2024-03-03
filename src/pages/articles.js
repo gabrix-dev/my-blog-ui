@@ -19,19 +19,19 @@ const ArticlesPage = () => {
       ) : (
         <>
           <motion.h1
-            className="text-dark mb-4 lg:text-4xl text-xl lg:text-left text-center font-medium"
+            className="text-dark mb-4 lg:text-4xl text-lg lg:text-left text-center font-bold"
             initial="initial"
             animate="animate"
             variants={bottomUp}
           >
-            Words can change the world
+            Words Can Change The World
           </motion.h1>
 
           <AnimatedText
-            className="w-full text-gray-600 text-base text-center lg:text-left lg:text-2xl xl:text-4xl mt-5 leading-tight !font-normal"
+            className="w-full text-gray-600 text-md text-center lg:text-left lg:text-2xl xl:text-3xl lg:mt-5 leading-tight !font-normal"
             text=" In this blog I share ideas, projects, reflections..."
           />
-          <Featured className="mt-10" article={data[0]} />
+          <Featured className="lg:mt-10 mt-3" article={data[0]} />
           <div className="grid grid-cols-12 gap-x-4 mt-10">
             {data.map((article, index) => (
               <ArticleCard

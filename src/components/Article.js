@@ -47,7 +47,7 @@ const ArticleCard = ({ className = "", article }) => {
       <h1 className="text-lg font-semibold text-slate-600 mt-5">
         {publication_date} - {reading_time} read
       </h1>
-      <h1 className="text-xl font-bold mt-5">{title}</h1>
+      <h1 className="text-xl font-bold mt-3">{title}</h1>
     </motion.div>
   );
 };
