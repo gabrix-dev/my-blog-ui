@@ -1,10 +1,10 @@
-import { CustomLink } from "@/pages";
 import {
   EnvelopeIcon,
 } from "@heroicons/react/24/outline";
 import { LINKEDIN_URL as myLinkedinUrl, MAIL_URL as myMailUrl } from '../app/constants';
 import { LinkedinOutlineIcon, MyBlogLogo } from "./Icons";
 import Layout from "./Layout";
+import CustomLink from "./CustomLink";
 
 const Footer = () => {
   return (
