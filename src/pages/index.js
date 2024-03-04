@@ -1,10 +1,8 @@
-import { setImageCached } from '@/app/imageSlice.js';
 import AnimatedText from "@/components/AnimatedText";
 import Layout from "@/components/Layout";
 import { motion } from "framer-motion";
 import Image from "next/image";
-import { useDispatch, useSelector } from 'react-redux';
-import { bottomUp, buttonVariants, zoomInOut } from "../animationVariants.js";
+import { bottomUp, zoomInOut } from "../animationVariants.js";
 
 import Loader from "@/components/Loader.js";
 import { useGetArticlesListQuery } from "@/services/aws.js";
@@ -31,19 +29,16 @@ export default function Home() {
 
   useGetArticlesListQuery();
   const [isLoading, setLoading] = useState(true);
-  const isImageCached = useSelector((state) => state.imageCache.isImageCached);
-  const dispatch = useDispatch();
 
   async function onImageLoad() {
-    await new Promise(r => setTimeout(r, 1000));
-    dispatch(setImageCached());
+    await new Promise(r => setTimeout(r, 500));
     setLoading(false);
   }
 
   return (
     <>
       <main className="flex text-dark w-full min-h-screen">
-        {isLoading && !isImageCached ? (
+        {isLoading ? (
           <>
             <Layout className="!px-0 w-[100vw]">
               <Loader />
