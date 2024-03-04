@@ -1,6 +1,6 @@
 import { useRouter } from "next/router";
 import Link from "next/link";
-import { LinkedInIcon, MoonIcon, TwitterIcon } from "./Icons";
+import { GoodreadsIcon, LinkedInIcon, MoonIcon, TwitterIcon } from "./Icons";
 import { useState } from "react";
 import { motion } from "framer-motion";
 import {
@@ -8,7 +8,7 @@ import {
   Bars3Icon,
   XMarkIcon
 } from "@heroicons/react/24/outline";
-import { LINKEDIN_URL as myLinkedinUrl, TWITTER_URL as myTwitterUrl, MAIL_URL as myMailUrl } from '../app/constants';
+import { LINKEDIN_URL as myLinkedinUrl, TWITTER_URL as myTwitterUrl, MAIL_URL as myMailUrl, GOODREADS_URL as myGoodReadsUrl } from '../app/constants';
 
 
 const CustomLink = ({ href, title, className = "" }) => {
@@ -90,6 +90,9 @@ const NavBar = () => {
           <motion.a href={myLinkedinUrl} target="_blank" whileHover={{ y: -3 }} whileTap={{ scale: 0.9 }}>
             <LinkedInIcon />
           </motion.a>
+          <motion.a href={myGoodReadsUrl} target="_blank" whileHover={{ y: -3 }} whileTap={{ scale: 0.9 }} >
+            <GoodreadsIcon className="w-5 h-auto" />
+          </motion.a>
           <motion.a href={myMailUrl} target="_blank" whileHover={{ y: -3 }} whileTap={{ scale: 0.9 }} >
             <EnvelopeIcon className="text-blue-600 w-5 h-auto" />
           </motion.a>
@@ -140,6 +143,15 @@ const NavBar = () => {
               className="w-6 mx-3"
             >
               <LinkedInIcon />
+            </motion.a>
+            <motion.a
+              href={myGoodReadsUrl}
+              target="_blank"
+              whileHover={{ y: -2 }}
+              whileTap={{ scale: 0.9 }}
+              className="w-6 mx-3"
+            >
+              <GoodreadsIcon className="w-5 h-auto" />
             </motion.a>
             <motion.a
               href={myLinkedinUrl}
