@@ -5,6 +5,7 @@ import "@/styles/globals.css";
 import { Montserrat } from "next/font/google";
 import Head from "next/head";
 import { Provider } from "react-redux";
+import { SpeedInsights } from "@vercel/speed-insights/next"
 
 const montserrat = Montserrat({
   subsets: ["latin"],
@@ -28,6 +29,7 @@ export default function App({ Component, pageProps }) {
           <Footer className="" />
         </main>
       </Provider>
+      <SpeedInsights />
     </>
   );
 }
