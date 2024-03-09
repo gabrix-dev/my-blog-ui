@@ -16,6 +16,26 @@ export const zoomInOut = {
   },
 };
 
+export const zoomInOutLeftRight = {
+  initial: {
+    opacity: 0,
+    x: -120,
+    scale: 1.3,
+  },
+  animate: {
+    opacity: 1,
+    scale: 1,
+    x: 0,
+    transition: {
+      delay: 0.0,
+      duration: 1.5,
+      // type: "spring",
+      // stiffness: 150,
+      // damping: 5,
+    },
+  },
+};
+
 export const fadeIn = {
   initial: {
     opacity: 0,
@@ -82,4 +102,8 @@ export const buttonVariants = {
   },
   hover: { scale: 1.1 },
   tap: { scale: 0.9 },
+};
+
+export const onClickScale = {
+  tap: { scale: 1.2 },
 };

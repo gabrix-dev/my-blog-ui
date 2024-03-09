@@ -82,6 +82,7 @@ const NavBar = () => {
           <CustomLink href="/" title="Home" />
           <CustomLink href="/about" title="About" />
           <CustomLink href="/articles" title="Articles" />
+          <CustomLink href="/subscribe" title="Subscribe" />
         </nav>
         <div className="flex gap-6 items-center">
           <motion.a href={myTwitterUrl} target="_blank" whileHover={{ y: -3 }} whileTap={{ scale: 0.9 }}>
@@ -121,6 +122,11 @@ const NavBar = () => {
             <CustomMobileLink
               href="/articles"
               title="Articles"
+              className=""
+              toggle={handleClick}
+            />            <CustomMobileLink
+              href="/subscribe"
+              title="Subscribe"
               className=""
               toggle={handleClick}
             />
