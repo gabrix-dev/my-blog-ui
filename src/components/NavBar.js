@@ -6,10 +6,14 @@ import { motion } from "framer-motion";
 import {
   EnvelopeIcon,
   Bars3Icon,
-  XMarkIcon
+  XMarkIcon,
 } from "@heroicons/react/24/outline";
-import { LINKEDIN_URL as myLinkedinUrl, TWITTER_URL as myTwitterUrl, MAIL_URL as myMailUrl, GOODREADS_URL as myGoodReadsUrl } from '../app/constants';
-
+import {
+  LINKEDIN_URL as myLinkedinUrl,
+  TWITTER_URL as myTwitterUrl,
+  MAIL_URL as myMailUrl,
+  GOODREADS_URL as myGoodReadsUrl,
+} from "../app/constants";
 
 const CustomLink = ({ href, title, className = "" }) => {
   const router = useRouter();
@@ -61,7 +65,7 @@ const NavBar = () => {
   };
 
   return (
-    <header className="w-full px-8 md:px-16 lg:px-32 2xl:px-60 md:py-16 py-10 flex items-center justify-between relative z-10 bg-light">
+    <header className="w-full px-8 md:px-16 lg:px-20 xl:px-32 2xl:px-60 md:py-16 py-10 flex items-center justify-between relative z-10 bg-light">
       <div className="w-full lg:hidden justify-between items-center flex">
         <h1 className="font-semibold text-lg text-orange-400">
           Not Just a Developer
@@ -70,7 +74,11 @@ const NavBar = () => {
           className="flex-col justify-center items-center"
           onClick={handleClick}
         >
-          {isOpen ? <XMarkIcon className="w-6 text-secondary" /> : <Bars3Icon className="w-6 text-secondary" />}
+          {isOpen ? (
+            <XMarkIcon className="w-6 text-secondary" />
+          ) : (
+            <Bars3Icon className="w-6 text-secondary" />
+          )}
         </button>
       </div>
 
@@ -78,23 +86,43 @@ const NavBar = () => {
         <h1 className="font-semibold text-2xl text-orange-400  ">
           Not Just a Developer
         </h1>
-        <nav className="flex lg:gap-16">
+        <nav className="flex xl:gap-16 gap-12">
           <CustomLink href="/" title="Home" />
           <CustomLink href="/about" title="About" />
           <CustomLink href="/articles" title="Articles" />
           <CustomLink href="/subscribe" title="Subscribe" />
         </nav>
         <div className="flex gap-6 items-center">
-          <motion.a href={myTwitterUrl} target="_blank" whileHover={{ y: -3 }} whileTap={{ scale: 0.9 }}>
+          <motion.a
+            href={myTwitterUrl}
+            target="_blank"
+            whileHover={{ y: -3 }}
+            whileTap={{ scale: 0.9 }}
+          >
             <TwitterIcon />
           </motion.a>
-          <motion.a href={myLinkedinUrl} target="_blank" whileHover={{ y: -3 }} whileTap={{ scale: 0.9 }}>
+          <motion.a
+            href={myLinkedinUrl}
+            target="_blank"
+            whileHover={{ y: -3 }}
+            whileTap={{ scale: 0.9 }}
+          >
             <LinkedInIcon />
           </motion.a>
-          <motion.a href={myGoodReadsUrl} target="_blank" whileHover={{ y: -3 }} whileTap={{ scale: 0.9 }} >
+          <motion.a
+            href={myGoodReadsUrl}
+            target="_blank"
+            whileHover={{ y: -3 }}
+            whileTap={{ scale: 0.9 }}
+          >
             <GoodreadsIcon className="w-5 h-auto" />
           </motion.a>
-          <motion.a href={myMailUrl} target="_blank" whileHover={{ y: -3 }} whileTap={{ scale: 0.9 }} >
+          <motion.a
+            href={myMailUrl}
+            target="_blank"
+            whileHover={{ y: -3 }}
+            whileTap={{ scale: 0.9 }}
+          >
             <EnvelopeIcon className="text-blue-600 w-5 h-auto" />
           </motion.a>
         </div>
@@ -124,7 +152,8 @@ const NavBar = () => {
               title="Articles"
               className=""
               toggle={handleClick}
-            />            <CustomMobileLink
+            />{" "}
+            <CustomMobileLink
               href="/subscribe"
               title="Subscribe"
               className=""
