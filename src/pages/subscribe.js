@@ -102,7 +102,7 @@ const SubscribePage = () => {
             <Layout className="!px-0 w-[100vw]">
               <Loader />
               <Image
-                src="/images/gf_robot_welcome.png"
+                src="/images/subscribe.png"
                 className="opacity-0"
                 width={0}
                 height={0}
