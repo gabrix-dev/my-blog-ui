@@ -16,7 +16,21 @@ export const awsApi = createApi({
         responseHandler: (response) => response.text(),
       }),
     }),
+    subscribe: builder.mutation({
+      query(email) {
+        const body = { email: email };
+        return {
+          url: `subscribe`,
+          method: "POST",
+          body,
+        };
+      },
+    }),
   }),
 });
 
-export const { useGetArticlesListQuery, useGetArticleQuery } = awsApi
+export const {
+  useGetArticlesListQuery,
+  useGetArticleQuery,
+  useSubscribeMutation,
+} = awsApi;

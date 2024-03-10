@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import ConfettiExplosion from "react-confetti-explosion";
 import { XMarkIcon } from "@heroicons/react/24/outline";
+import { useSubscribeMutation } from "@/services/aws.js";
 
 import {
   bottomUp,
@@ -66,6 +67,7 @@ const SubscribePage = () => {
   const [showBadge, setShowBadge] = useState(false);
   const [isSuccesful, setIsSuccesful] = useState(true);
   const [inputValue, setInputValue] = useState("");
+  const [subscribe] = useSubscribeMutation();
 
   const handleInputChange = (event) => {
     setInputValue(event.target.value);
@@ -80,6 +82,7 @@ const SubscribePage = () => {
     if (!isValidEmail(inputValue)) {
       setIsSuccesful(false);
     } else {
+      subscribe(inputValue);
       setIsSuccesful(true);
       setIsExploding(true);
     }
