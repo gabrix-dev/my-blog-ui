@@ -5,7 +5,7 @@ import "@/styles/globals.css";
 import { Montserrat } from "next/font/google";
 import Head from "next/head";
 import { Provider } from "react-redux";
-import { SpeedInsights } from "@vercel/speed-insights/next"
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 const montserrat = Montserrat({
   subsets: ["latin"],
@@ -20,6 +20,20 @@ export default function App({ Component, pageProps }) {
         <link rel="icon" href="/favicon.ico" />
         <title>Not Just a Developer</title>
       </Head>
+      <script
+        async
+        src="https://www.googletagmanager.com/gtag/js?id=G-287CPD0LGP"
+      ></script>
+      <script
+        dangerouslySetInnerHTML={{
+          __html: `
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-287CPD0LGP');
+        `,
+        }}
+      ></script>
       <Provider store={store}>
         <main
           className={`${montserrat.variable} font-mont bg-white  w-full min-h-screen`}
