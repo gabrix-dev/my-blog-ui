@@ -19,6 +19,20 @@ export default function App({ Component, pageProps }) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
         <title>Not Just a Developer</title>
+        <meta
+          name="description"
+          content="Gabriel Fortià's personal site"
+          key="desc"
+        />{" "}
+        <meta name="og:description" content="Gabriel Fortià's personal site" />
+        <meta
+          name="og:title"
+          content="Not Just a Developer by Gabriel Fortià"
+        />
+        <meta
+          name="og:image"
+          content="https://i.postimg.cc/0j2JrNBL/blog-UI.png"
+        />
       </Head>
       <script
         async
