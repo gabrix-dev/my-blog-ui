@@ -24,13 +24,14 @@ export default function App({ Component, pageProps }) {
           content="Gabriel Fortià's personal site"
           key="desc"
         />{" "}
-        <meta name="og:description" content="Gabriel Fortià's personal site" />
         <meta
-          name="og:title"
+          name="title"
+          property="og:title"
           content="Not Just a Developer by Gabriel Fortià"
         />
         <meta
-          name="og:image"
+          name="image"
+          property="og:image"
           content="https://i.postimg.cc/0j2JrNBL/blog-UI.png"
         />
       </Head>
