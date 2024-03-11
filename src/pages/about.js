@@ -5,7 +5,7 @@ import {
   leftRight1,
   rightLeft1,
   rightLeft2,
-  rightLeft3
+  rightLeft3,
 } from "@/animationVariants";
 import FactsSection from "@/components/FactsSection";
 import Layout from "@/components/Layout";
@@ -74,7 +74,7 @@ export default function About({ className }) {
                   className="mx-auto md:mx-0"
                   style={{ color: "#FF8C00" }}
                   sequence={[
-                    "a Telecomm Engineer",
+                    "a Telecom. Engineer",
                     1000,
                     "a Software Developer",
                     1000,

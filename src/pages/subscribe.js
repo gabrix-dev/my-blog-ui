@@ -139,8 +139,8 @@ const SubscribePage = () => {
                   variants={bottomUp}
                 >
                   Join my exclusive club of Very Informed Persons (VIPs) and
-                  never miss a beat! Be the first to know about my latest blog
-                  posts and thought-provoking content.
+                  never miss a beat! VIPs receive an email notification every
+                  time I post a blog.
                 </p>
                 {/* lg:self-center */}
                 <div className="w-52 lg:hidden self-center">
