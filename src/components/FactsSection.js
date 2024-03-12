@@ -31,7 +31,7 @@ const factsAboutMe = [
   {
     title: "Constant Listener",
     description:
-      "I love hearing podcasts, who needs silence when you can tune in to wisdom and wit? My favorite ones (currently) are Itnig, The All In Pod and Last Week in AI.",
+      "I love hearing podcasts, who needs silence when you can tune in to wisdom and wit? My favorite ones (currently) are Itnig and The All-In Podcast.",
     icon: SpeakerWaveIcon,
   },
   {
