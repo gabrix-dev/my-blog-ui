@@ -6,6 +6,7 @@ import { Montserrat } from "next/font/google";
 import Head from "next/head";
 import { Provider } from "react-redux";
 import { SpeedInsights } from "@vercel/speed-insights/next";
+import { Analytics } from "@vercel/analytics/react";
 
 const montserrat = Montserrat({
   subsets: ["latin"],
@@ -35,20 +36,7 @@ export default function App({ Component, pageProps }) {
           content="https://i.postimg.cc/0j2JrNBL/blog-UI.png"
         />
       </Head>
-      <script
-        async
-        src="https://www.googletagmanager.com/gtag/js?id=G-BC9RJ7VH8J"
-      ></script>
-      <script
-        dangerouslySetInnerHTML={{
-          __html: `
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-          gtag('config', 'G-BC9RJ7VH8J');
-        `,
-        }}
-      ></script>
+
       <Provider store={store}>
         <main
           className={`${montserrat.variable} font-mont bg-white  w-full min-h-screen`}
@@ -59,6 +47,7 @@ export default function App({ Component, pageProps }) {
         </main>
       </Provider>
       <SpeedInsights />
+      <Analytics />
     </>
   );
 }
