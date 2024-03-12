@@ -16,6 +16,7 @@ function MarkdownRenderer({ children: markdown }) {
           const match = /language-(\w+)/.exec(className || "");
           return !inline && match ? (
             <SyntaxHighlighter
+              className="text-xs md:text-sm border-2 rounded-md border-gray-300"
               style={style}
               PreTag="div"
               language={match[1]}
