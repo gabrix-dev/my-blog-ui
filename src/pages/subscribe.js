@@ -42,17 +42,24 @@ const Badge = ({ success = false, onClose, className }) => {
     : "bg-red-100 border-red-300";
 
   const badgeMessage = success
-    ? "Congrats! You are a VIP."
+    ? "Verification email sent!"
     : "Error! Wrong email format";
+
+  const badgeMessage2 = success ? "Confirm and becoma a VIP" : null;
 
   return (
     <div
       className={`flex items-center justify-between border-2 px-3 py-1 rounded-xl ${badgeColor} ${className}`}
     >
-      <span className="text-sm font-medium text-gray-800">{badgeMessage}</span>
+      <div>
+        <p className="text-sm font-medium text-gray-800">{badgeMessage}</p>
+        {badgeMessage2 && (
+          <p className="text-sm font-medium text-gray-800">{badgeMessage2}</p>
+        )}
+      </div>
       <button
         onClick={onClose}
-        className="flex items-center justify-center w-5 h-5 text-gray-500 hover:text-gray-800"
+        className="flex items-baseline justify-center w-5 h-5 text-gray-500 hover:text-gray-800 ml-4"
       >
         <XMarkIcon className="w-4 h-4" />
       </button>
@@ -174,11 +181,11 @@ const SubscribePage = () => {
                     >
                       Subscribe
                     </motion.button>
-                    {isExploding && <ConfettiExplosion duration={3000} />}
+                    {isExploding && <ConfettiExplosion duration={4000} />}
                   </motion.div>
                 </div>
                 <Badge
-                  className={`mt-6 sm:w-96 ${
+                  className={`mt-6 sm:w-64 ${
                     showBadge ? "opacity-100" : "opacity-0"
                   }`}
                   success={isSuccesful}
