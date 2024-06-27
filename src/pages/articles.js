@@ -31,15 +31,18 @@ const ArticlesPage = () => {
             className="w-full text-gray-600 text-md text-center lg:text-left lg:text-2xl xl:text-3xl lg:mt-5 leading-tight !font-normal"
             text=" In this blog I share ideas, projects, reflections..."
           />
-          <Featured className="lg:mt-10 mt-3" article={data[0]} />
+          <Featured className="lg:mt-10 mt-3" article={data[2]} />
           <div className="grid grid-cols-12 gap-x-4 mt-10">
-            {data.slice().reverse().map((article, index) => (
-              <ArticleCard
-                key={index}
-                article={article}
-                className="lg:col-span-4 col-span-12 mb-10"
-              />
-            ))}
+            {data
+              .slice()
+              .reverse()
+              .map((article, index) => (
+                <ArticleCard
+                  key={index}
+                  article={article}
+                  className="lg:col-span-4 col-span-12 mb-10"
+                />
+              ))}
           </div>
         </>
       )}
