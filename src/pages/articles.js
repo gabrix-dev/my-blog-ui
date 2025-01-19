@@ -31,7 +31,7 @@ const ArticlesPage = () => {
             className="w-full text-gray-600 text-md text-center lg:text-left lg:text-2xl xl:text-3xl lg:mt-5 leading-tight !font-normal"
             text=" In this blog I share ideas, projects, reflections..."
           />
-          <Featured className="lg:mt-10 mt-3" article={data[2]} />
+          <Featured className="lg:mt-10 mt-3" article={data[4]} />
           <div className="grid grid-cols-12 gap-x-4 mt-10">
             {data
               .slice()

@@ -83,15 +83,13 @@ const StorySection = () => {
           empowering it was, as it allowed me to build anything I wanted.
         </p>
         <p className="col-span-1 max-w-full break-words mt-5 lg:text-lg text-sm text-justify px-3 font-medium text-gray-600">
-          I decided to specialize in telematics for its practical application in
-          building things. Post-graduation, my learning journey continues daily,
-          both at and outside of work. Currently, I serve as a software
-          developer in the R&D department of Entrust, a major company. Our focus
-          is on creating proofs of concepts from scratch to enhance our products
-          with new technologies and seize opportunities for innovation.
-          Presently, I am delving into the world of AI/ML, leading a project
-          that aims to create a LLM based AI agent that serves as the backbone
-          for automated product configuration in the future.
+          After graduating, my learning journey continues daily, both professionally and in personal projects.
+          I have chosen to focus on becoming a product builder, creating solutions that address real-world problems.
+          Currently, I work as a backend developer at a Cybersecurity AI startup, a fast-paced environment that aligns
+          perfectly with my desire for big challenges. Before this, I gained valuable experience at Entrust, a large
+          corporation, where I worked in the R&D department and led the development of the first version of Entrust Copilot,
+          going from research to implementation. In my free time, I am developing a project that aims to revolutionize how
+          teachers correct and generate exercises, which I plan to launch in 2025.
         </p>
       </motion.div>
     </div>

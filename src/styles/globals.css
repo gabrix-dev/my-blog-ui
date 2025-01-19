@@ -58,6 +58,11 @@
     font-size: 18px;
     /* Adjust font size for h4 */
   }
+
+  .markdown li {
+    font-size: 16px;
+    text-align: justify;
+  }
 }
 
 @tailwind base;
