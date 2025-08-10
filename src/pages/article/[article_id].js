@@ -37,23 +37,29 @@ const Article = () => {
 
   return (
     <div>
-      <Layout className="min-h-screen lg:!px-[27vw] !pt-0 md:!pt-16">
+      <Layout className="min-h-screen lg:!px-[27vw] pt-6 md:!pt-16">
         {isLoading || isLoadingList || isError || isErrorList ? (
           <Loader />
         ) : (
           <motion.div initial="initial" animate="animate" variants={bottomUp}>
-            <h1 className="text-left text-3xl md:text-6xl font-bold">{articleMetadata.title}</h1>
-            <h2 className="text-gray-600 text-md md:text-2xl mt-4 md:mt-8">{articleMetadata.subtitle}</h2>
-            <div className="flex gap-6 items-center mt-5 border-t border-b border-gray-300 py-2">
-              <h1 className="md:text-md text-sm font-normal text-slate-600">
-                {articleMetadata.publication_date} - {articleMetadata.reading_time} read
+            <header className="mt-1 md:mt-2 mb-6 md:mb-8 pb-4 border-b border-gray-200">
+              <h1 className="text-3xl md:text-5xl font-extrabold leading-tight tracking-tight text-balance">
+                {articleMetadata.title}
               </h1>
-            </div>
+              <p className="mt-2 text-slate-600 text-base md:text-xl">
+                {articleMetadata.subtitle}
+              </p>
+              <div className="flex items-center gap-3 mt-3 text-slate-500 text-sm md:text-base">
+                <span>{articleMetadata.publication_date}</span>
+                <span aria-hidden>•</span>
+                <span>{articleMetadata.reading_time} read</span>
+              </div>
+            </header>
 
             <Image
               src={articleMetadata.cover}
               alt="G-F brand robot welcoming blog readers"
-              className="rounded-xl mt-6 aspect-[4/3] "
+              className="rounded-xl mt-6 aspect-[4/3] shadow-xl shadow-slate-900/10"
               width={0}
               height={0}
               sizes="100vw"
