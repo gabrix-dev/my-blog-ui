@@ -37,7 +37,7 @@ const timelineEvents = [
     title: "Building PoCs",
     paragraphs: [
       "During my last college year, I joined Entrust in the R&D department, where we built proof‑of‑concepts from scratch. My favorite was Entrust Copilot, an AI agent built before “AI agents” were a thing.",
-      "With no AI specialists around, I taught myself everything from classic ML to transformers, inspired by the first papers on LLM tool use (ReAct, ToolBench, ToolAlpaca...). Leading a small team, we turned research into a working product that improved the UX of complex enterprise identity software.",
+      "With no AI specialists around, I taught myself everything from classic ML to transformers, inspired by the first papers on LLM tool use (ReAct, ToolBench, ToolAlpaca...). Leading a small team, we turned research into a working PoC that showed how AI Agents could improve the UX of complex enterprise identity software.",
     ],
     // No dedicated image available; we keep this as a text-first card
   },
